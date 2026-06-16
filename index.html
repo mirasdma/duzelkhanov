@@ -205,7 +205,17 @@ img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-tou
 .lb-nav{position:fixed;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;border:1px solid var(--line);background:rgba(8,7,5,.5);color:#fff;font-size:26px;cursor:pointer;z-index:4;transition:all .3s;display:grid;place-items:center}
 .lb-nav:hover{border-color:var(--gold);color:var(--gold)}
 .lb-prev{left:24px}.lb-next{right:24px}
-@media(max-width:680px){.lb-nav{width:44px;height:44px;font-size:22px}.lb-info{padding:16px 20px}.lb-zoomhint{display:none}}
+/* подсказка про мышь (клик/колесо/перетащить) — только на устройствах с курсором */
+@media (hover: none),(pointer: coarse){.lb-zoomhint{display:none}}
+@media(max-width:680px){.lb-nav{width:44px;height:44px;font-size:22px}}
+/* на узких ИЛИ коротких (горизонтальный телефон) экранах — инфо в колонку, без наездов */
+@media(max-width:760px),(max-height:600px){
+  .lb-info{flex-direction:column;align-items:flex-start;gap:6px;padding:14px 22px}
+  .lb-info h3{font-size:19px;line-height:1.2}
+  .lb-info p{font-size:13px}
+  .lb-cycle{font-size:10px;padding:4px 11px}
+  .lb-zoomhint{display:none}
+}
 
 /* ── TENGE FEATURE ───────────────────── */
 .tenge{background:var(--bg-2);overflow:hidden}
