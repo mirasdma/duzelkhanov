@@ -157,19 +157,19 @@ function lookup(name) {
 // (а не одной подписью в углу), поэтому его нельзя обрезать и видно всегда.
 // Сохраняется при скачивании файла (в отличие от CSS-наложения в лайтбоксе).
 function watermark(w, h) {
-  const fs = Math.max(14, Math.round(w / 50));
+  const fs = Math.max(13, Math.round(w / 54));
   const text = '©  Ағымсалы Дүзелханов';
-  const stepX = Math.round(w * 0.38);
-  const stepY = Math.round(fs * 5);
-  const sw = Math.max(0.6, fs / 22);
+  const stepX = Math.round(w * 0.56);
+  const stepY = Math.round(fs * 7.5);
+  const sw = Math.max(0.4, fs / 36);
   let tiles = '';
   let row = 0;
-  for (let y = -Math.round(h * 0.12); y < h + stepY; y += stepY) {
+  for (let y = -Math.round(h * 0.1); y < h + stepY; y += stepY) {
     const offset = (row % 2) * Math.round(stepX / 2);
-    for (let x = -Math.round(w * 0.12) + offset; x < w + stepX; x += stepX) {
+    for (let x = -Math.round(w * 0.1) + offset; x < w + stepX; x += stepX) {
       tiles += `<text x="${x}" y="${y}" transform="rotate(-30 ${x} ${y})" `
         + `font-family="Georgia,'Times New Roman',serif" font-size="${fs}" `
-        + `fill="#ffffff" fill-opacity="0.30" stroke="#000000" stroke-opacity="0.18" `
+        + `fill="#ffffff" fill-opacity="0.15" stroke="#000000" stroke-opacity="0.05" `
         + `stroke-width="${sw}" paint-order="stroke">${text}</text>`;
     }
     row++;
@@ -187,11 +187,13 @@ for (const g of groups) {
   for (const f of files) {
     counters[g.tech] = (counters[g.tech] || 0) + 1;
     const out = `${g.tech}-${String(counters[g.tech]).padStart(3, '0')}.jpg`;
+    let ar = 1; // пропорция изображения (ширина/высота) — для резервирования места в галерее
     try {
       const base = await sharp(path.join(dir, f), { limitInputPixels: false }).rotate()
         .resize({ width: 1700, height: 1700, fit: 'inside', withoutEnlargement: true })
         .toBuffer();
       const m = await sharp(base).metadata();
+      ar = m.width / m.height;
       const full = await sharp(base)
         .composite([{ input: watermark(m.width, m.height), top: 0, left: 0 }])
         .jpeg({ quality: 82, progressive: true, mozjpeg: true })
@@ -219,7 +221,7 @@ for (const g of groups) {
       }
       base = { ...t };                      // запоминаем базовое имя для группировки в серии
     }
-    works.push({ img: `assets/works/${out}`, f: g.tech, c, t, d: DLAB[g.tech], _base: base });
+    works.push({ img: `assets/works/${out}`, f: g.tech, c, t, d: DLAB[g.tech], ar: +ar.toFixed(3), _base: base });
     ok++;
   }
   console.log(`${g.tech}: ${ok} файлов`);

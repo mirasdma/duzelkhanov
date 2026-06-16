@@ -663,7 +663,7 @@ function makeCard(w,i){
   el.style.transitionDelay=((i%3)*0.07)+'s';
   el.dataset.idx=WORKS.indexOf(w);
   const thumb=w.img.replace('assets/works/','assets/works/thumb/');
-  el.innerHTML=`<div class="art-pic"><img src="${thumb}" alt="${w.t[LANG]}" loading="lazy" draggable="false"><span class="art-guard"></span></div>
+  el.innerHTML=`<div class="art-pic"><img src="${thumb}" alt="${w.t[LANG]}" loading="lazy" draggable="false" style="aspect-ratio:${w.ar||1}"><span class="art-guard"></span></div>
     <div class="meta"><h4>${w.t[LANG]}</h4><p>${w.d[LANG]}</p></div>`;
   if(window.__io) window.__io.observe(el);
   return el;
@@ -937,10 +937,22 @@ if(!REDUCE && window.Lenis){
   function raf(t){lenis.raf(t);requestAnimationFrame(raf);}
   requestAnimationFrame(raf);
   lenis.on('scroll',onScrollFx);
+  // Раскладка считается стабильной после загрузки шрифтов и страницы.
+  // До этого высота «плывёт» (догрузка шрифтов сдвигает текст карточек),
+  // поэтому переход по якорю повторяем, когда всё устаканится — иначе скролл «промахивается».
+  let layoutStable=false;
+  Promise.all([
+    document.fonts?document.fonts.ready:Promise.resolve(),
+    document.readyState==='complete'?Promise.resolve():new Promise(r=>addEventListener('load',r,{once:true}))
+  ]).then(()=>setTimeout(()=>{layoutStable=true;},300));
+  function navTo(el){lenis.scrollTo(el,{offset:-8});}
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',e=>{
       const id=a.getAttribute('href');
-      if(id.length>1){const el=document.querySelector(id);if(el){e.preventDefault();lenis.scrollTo(el,{offset:-8});}}
+      if(id.length>1){const el=document.querySelector(id);if(el){e.preventDefault();
+        navTo(el);
+        if(!layoutStable){(document.fonts?document.fonts.ready:Promise.resolve()).then(()=>setTimeout(()=>navTo(el),140));}
+      }}
     });
   });
 }
