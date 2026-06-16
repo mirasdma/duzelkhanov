@@ -153,17 +153,28 @@ function lookup(name) {
   return best;
 }
 
-// Водяной знак © — вшивается в нижний правый угол КАЖДОГО изображения работы,
-// поэтому сохраняется и при скачивании файла (в отличие от CSS-наложения в лайтбоксе).
+// Водяной знак © — вшивается ПОВТОРЯЮЩИМСЯ ДИАГОНАЛЬНЫМ узором по всей картине
+// (а не одной подписью в углу), поэтому его нельзя обрезать и видно всегда.
+// Сохраняется при скачивании файла (в отличие от CSS-наложения в лайтбоксе).
 function watermark(w, h) {
-  const fs = Math.max(15, Math.round(w / 52));
-  const pad = Math.round(fs * 0.95);
-  const svg = `<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">`
-    + `<text x="${w - pad}" y="${h - pad}" text-anchor="end" `
-    + `font-family="Georgia,'Times New Roman',serif" font-size="${fs}" `
-    + `fill="#ffffff" fill-opacity="0.5" stroke="#000000" stroke-opacity="0.22" `
-    + `stroke-width="${Math.max(0.6, fs / 26)}" paint-order="stroke">© Ағымсалы Дүзелханов</text></svg>`;
-  return Buffer.from(svg);
+  const fs = Math.max(14, Math.round(w / 50));
+  const text = '©  Ағымсалы Дүзелханов';
+  const stepX = Math.round(w * 0.38);
+  const stepY = Math.round(fs * 5);
+  const sw = Math.max(0.6, fs / 22);
+  let tiles = '';
+  let row = 0;
+  for (let y = -Math.round(h * 0.12); y < h + stepY; y += stepY) {
+    const offset = (row % 2) * Math.round(stepX / 2);
+    for (let x = -Math.round(w * 0.12) + offset; x < w + stepX; x += stepX) {
+      tiles += `<text x="${x}" y="${y}" transform="rotate(-30 ${x} ${y})" `
+        + `font-family="Georgia,'Times New Roman',serif" font-size="${fs}" `
+        + `fill="#ffffff" fill-opacity="0.30" stroke="#000000" stroke-opacity="0.18" `
+        + `stroke-width="${sw}" paint-order="stroke">${text}</text>`;
+    }
+    row++;
+  }
+  return Buffer.from(`<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">${tiles}</svg>`);
 }
 
 const works = [];
