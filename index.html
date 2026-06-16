@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="kk" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Агимсалы Дузельханов (1951–2025) — художник</title>
+<meta name="description" content="Сайт памяти художника Агимсалы Дузельханова (1951–2025) — заслуженного деятеля искусств Республики Казахстан, одного из авторов дизайна тенге, лауреата Государственной премии РК. Живопись, графика, наследие." />
+<meta name="theme-color" content="#100E0B" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/meta/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/meta/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/meta/favicon-192.png" />
+<link rel="apple-touch-icon" href="assets/meta/apple-touch-icon.png" />
+
+<!-- Open Graph / соцсети. ПРИ ПУБЛИКАЦИИ: заменить пути og:image / twitter:image на абсолютные (https://домен/assets/meta/og-cover.jpg) и добавить og:url -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="kk_KZ" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:site_name" content="Ағымсалы Дүзелханов" />
+<meta property="og:url" content="https://mirasdma.github.io/duzelkhanov/" />
+<meta property="og:title" content="Агимсалы Дузельханов (1951–2025)" />
+<meta property="og:description" content="Сайт памяти художника — заслуженного деятеля искусств Казахстана, одного из авторов дизайна тенге. Живопись, графика, наследие." />
+<meta property="og:image" content="https://mirasdma.github.io/duzelkhanov/assets/meta/og-cover.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Ағымсалы Дүзелханов — картина «Охота»" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Агимсалы Дузельханов (1951–2025)" />
+<meta name="twitter:description" content="Сайт памяти художника — живопись, графика, дизайн тенге, наследие." />
+<meta name="twitter:image" content="https://mirasdma.github.io/duzelkhanov/assets/meta/og-cover.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<style>
+:root{
+  --bg:#100E0B; --bg-2:#16130F; --surface:#1C1813; --line:rgba(201,162,75,.16);
+  --text:#EDE7DB; --muted:#A89F8E; --faint:#6F6657;
+  --gold:#C9A24B; --gold-soft:#D8BC7E; --ochre:#B07B3A;
+  --shadow:0 30px 80px -30px rgba(0,0,0,.7);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+[data-theme="light"]{
+  --bg:#FFFFFF; --bg-2:#FFFFFF; --surface:#FFFFFF; --line:rgba(120,90,40,.15);
+  --text:#211B12; --muted:#6B6051; --faint:#9A8E79;
+  --gold:#A8792B; --gold-soft:#8A6420; --ochre:#9A6526;
+  --shadow:0 30px 70px -34px rgba(80,60,20,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+/* Lenis (плавная инерционная прокрутка) */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:'Inter',system-ui,sans-serif; line-height:1.7;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  transition:background .6s var(--ease), color .6s var(--ease);
+}
+::selection{background:var(--gold);color:#100E0B}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.serif{font-family:'Cormorant Garamond',serif}
+.eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.section{padding:130px 0;position:relative}
+.section-head{max-width:760px;margin-bottom:64px}
+.section-head h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,5vw,60px);line-height:1.06;margin:18px 0 0;letter-spacing:-.005em}
+.section-head p{color:var(--muted);font-size:18px;margin-top:22px;max-width:620px}
+.reveal{opacity:0;transform:translateY(38px) scale(.985);transition:opacity 1.05s var(--ease),transform 1.05s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ── CINEMATIC FX ────────────────────── */
+.grain{position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+[data-theme="light"] .grain{opacity:.028}
+.vignette{position:fixed;inset:0;z-index:9996;pointer-events:none;box-shadow:inset 0 0 230px 70px rgba(0,0,0,.5)}
+[data-theme="light"] .vignette{box-shadow:none}
+
+/* ── NAV ─────────────────────────────── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:all .5s var(--ease)}
+.nav .bar{display:flex;align-items:center;justify-content:space-between;padding:26px 32px;max-width:1240px;margin:0 auto}
+.nav.scrolled{background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav.scrolled .bar{padding:16px 32px}
+.brand{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;letter-spacing:.01em}
+.brand small{display:block;font-family:'Inter';font-size:9.5px;letter-spacing:.34em;color:var(--gold);font-weight:500;text-transform:uppercase;margin-top:3px}
+.nav-links{display:flex;gap:38px;align-items:center}
+.nav-links a{font-size:13.5px;letter-spacing:.04em;color:var(--muted);transition:color .25s;position:relative}
+.nav-links a:hover{color:var(--text)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;background:var(--gold);transition:width .3s var(--ease)}
+.nav-links a:hover::after{width:100%}
+.nav-tools{display:flex;align-items:center;gap:14px}
+.lang{display:flex;border:1px solid var(--line);border-radius:40px;overflow:hidden}
+.lang button{background:none;border:none;color:var(--faint);font:inherit;font-size:11.5px;letter-spacing:.08em;padding:7px 12px;cursor:pointer;transition:all .25s;font-weight:500}
+.lang button.active{background:var(--gold);color:#100E0B}
+.lang button:not(.active):hover{color:var(--text)}
+.icon-btn{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:none;color:var(--text);cursor:pointer;display:grid;place-items:center;transition:all .3s}
+.icon-btn:hover{border-color:var(--gold);color:var(--gold)}
+.burger{display:none;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:none;cursor:pointer;grid-auto-flow:row;place-content:center;gap:4px;color:var(--text);padding:0}
+.burger span{display:block;width:17px;height:1.5px;background:currentColor;border-radius:2px;transition:transform .32s var(--ease),opacity .2s}
+.burger.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(80vw,330px);z-index:49;background:var(--bg);border-left:1px solid var(--line);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center;gap:2px;padding:84px 38px 40px;transform:translateX(110%);transition:transform .42s var(--ease);visibility:hidden}
+.mobile-menu.open{transform:translateX(0);visibility:visible}
+.mobile-menu a{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:var(--text);padding:15px 0;border-bottom:1px solid var(--line);transition:color .25s}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:var(--gold)}
+.menu-backdrop{position:fixed;inset:0;z-index:48;background:rgba(0,0,0,.55);opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.menu-backdrop.open{opacity:1;visibility:visible}
+/* шапка над тёмным hero (до прокрутки) */
+.nav:not(.scrolled) .brand{opacity:0;pointer-events:none}
+.nav:not(.scrolled) .nav-links a{color:rgba(255,255,255,.85)}
+.nav:not(.scrolled) .nav-links a:hover{color:#fff}
+.nav:not(.scrolled) .icon-btn{border-color:rgba(255,255,255,.35);color:#fff}
+.nav:not(.scrolled) .icon-btn:hover{border-color:#fff;color:#fff}
+.nav:not(.scrolled) .burger{border-color:rgba(255,255,255,.4);color:#fff}
+.nav:not(.scrolled) .lang{border-color:rgba(255,255,255,.32)}
+.nav:not(.scrolled) .lang button{color:rgba(255,255,255,.74)}
+.nav:not(.scrolled) .lang button.active{background:#fff;color:#1a1714}
+
+/* ── HERO (драматичный, «Охота») ──────── */
+.hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;will-change:transform}
+.hero-bg img{width:100%;height:116%;object-fit:cover;object-position:center 30%;will-change:transform;animation:kenburns 28s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+.hero-bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(18,15,10,.1),rgba(18,15,10,0) 40%,rgba(18,15,10,.14) 70%,rgba(18,15,10,.66)),
+  linear-gradient(76deg,rgba(18,15,10,.52),rgba(18,15,10,0) 46%)}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:0 32px 104px;color:#fff}
+.hero .eyebrow{color:#fff;font-weight:500;text-shadow:0 1px 14px rgba(0,0,0,.6)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(56px,10vw,134px);line-height:.95;letter-spacing:-.005em;margin:18px 0 0;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.55),0 1px 3px rgba(0,0,0,.4)}
+.hero h1 em{font-style:normal;color:#fff}
+.hero-dates{margin-top:26px;font-size:16.5px;letter-spacing:.24em;color:rgba(255,255,255,.9);text-shadow:0 1px 14px rgba(0,0,0,.6)}
+.hero .lede{font-size:clamp(16px,1.6vw,18px);line-height:1.7;color:rgba(255,255,255,.9);margin-top:24px;max-width:470px;text-shadow:0 1px 18px rgba(0,0,0,.55)}
+.hero-cta{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:40px;font-size:14px;font-weight:500;letter-spacing:.02em;cursor:pointer;transition:all .35s var(--ease);border:1px solid transparent}
+.btn-primary{background:none;border-color:rgba(255,255,255,.85);color:#fff}
+.btn-primary:hover{box-shadow:0 0 0 3px rgba(255,255,255,.15);border-color:#fff;transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.92)}
+.btn-ghost:hover{border-color:#fff;color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.12);transform:translateY(-2px)}
+.scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.6);display:flex;flex-direction:column;align-items:center;gap:12px}
+.scroll-cue span{width:1px;height:46px;background:linear-gradient(rgba(255,255,255,.7),transparent);animation:cue 2.4s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ── STATS ───────────────────────────── */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats .grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:46px 28px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border-right:none}
+.stat .num{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,50px);color:var(--gold);line-height:1}
+.stat .lab{font-size:12.5px;color:var(--muted);margin-top:12px;letter-spacing:.04em}
+
+/* ── WORKS ───────────────────────────── */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:52px}
+.filters button{background:none;border:1px solid var(--line);color:var(--muted);padding:10px 20px;border-radius:40px;font:inherit;font-size:13px;cursor:pointer;transition:color .3s,border-color .3s,box-shadow .35s,transform .35s var(--ease)}
+.filters button:hover{border-color:var(--gold);color:var(--text);box-shadow:0 0 0 3px rgba(201,162,75,.13);transform:translateY(-1px)}
+.filters button.active{border-color:var(--gold);color:var(--gold)}
+.gallery{column-count:3;column-gap:30px}
+.art{break-inside:avoid;margin:0 0 42px;cursor:pointer}
+.art-pic{position:relative;overflow:hidden;background:var(--bg-2)}
+.art-pic img{width:100%;display:block;transition:transform 1.2s var(--ease)}
+.art:hover .art-pic img{transform:scale(1.045)}
+.art .meta{margin-top:15px}
+.art .meta h4{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--text);font-weight:500;line-height:1.15}
+.art .meta p{font-size:12.5px;color:var(--muted);margin-top:4px;letter-spacing:.02em}
+
+/* ── VIEW TABS / CYCLES ──────────────── */
+.viewtabs{display:inline-flex;gap:10px;margin-bottom:22px}
+.viewtabs button{background:none;border:1px solid var(--line);color:var(--muted);font:inherit;font-size:13px;padding:10px 20px;border-radius:40px;cursor:pointer;transition:color .3s,border-color .3s,box-shadow .35s,transform .35s var(--ease)}
+.viewtabs button:hover{border-color:var(--gold);color:var(--text);box-shadow:0 0 0 3px rgba(201,162,75,.13);transform:translateY(-1px)}
+.viewtabs button.active{border-color:var(--gold);color:var(--gold)}
+.gallery-cycles{display:block}
+.cycle-group{margin-bottom:70px}
+.cycle-group:last-child{margin-bottom:0}
+.cycle-head{display:flex;align-items:baseline;gap:16px;margin-bottom:30px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.cycle-head h3{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.4vw,40px);font-weight:400;color:var(--text)}
+.cycle-count{font-size:13px;color:var(--gold);letter-spacing:.1em}
+.cycle-empty{padding:34px 0;color:var(--faint);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:16px}
+
+/* ── IMAGE PROTECTION ────────────────── */
+img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none}
+.art-guard{position:absolute;inset:0;z-index:1}
+
+/* ── LIGHTBOX ────────────────────────── */
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(8,7,5,.96);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+.lightbox.on{opacity:1;visibility:visible}
+.lb-stage{position:relative;max-width:88vw;max-height:80vh;overflow:hidden;cursor:zoom-in;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(12px) scale(.96);transition:opacity .45s var(--ease),transform .6s var(--ease)}
+.lightbox.on .lb-stage{opacity:1;transform:none}
+.lb-stage img{max-width:88vw;max-height:80vh;display:block;transform-origin:center;transition:transform .25s var(--ease);will-change:transform}
+.lb-wm{position:absolute;inset:0;pointer-events:none;opacity:.55;mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='220'%3E%3Ctext x='18' y='130' fill='%23ffffff' fill-opacity='0.5' font-family='Georgia, serif' font-size='16' transform='rotate(-28 170 110)'%3E%C2%A9 A. DUZELKHANOV%3C/text%3E%3C/svg%3E")}
+.lb-info{position:fixed;left:0;right:0;bottom:0;padding:22px 40px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:linear-gradient(transparent,rgba(8,7,5,.72));z-index:3}
+.lb-info h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:#fff}
+.lb-info p{color:var(--muted);font-size:14px}
+.lb-cycle{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:5px 12px;border-radius:30px}
+.lb-zoomhint{margin-left:auto;font-size:12px;color:var(--faint)}
+.lb-close{position:fixed;top:22px;right:26px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(8,7,5,.5);color:#fff;font-size:22px;cursor:pointer;z-index:4;transition:all .3s;display:grid;place-items:center}
+.lb-close:hover{border-color:var(--gold);color:var(--gold)}
+.lb-nav{position:fixed;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;border:1px solid var(--line);background:rgba(8,7,5,.5);color:#fff;font-size:26px;cursor:pointer;z-index:4;transition:all .3s;display:grid;place-items:center}
+.lb-nav:hover{border-color:var(--gold);color:var(--gold)}
+.lb-prev{left:24px}.lb-next{right:24px}
+@media(max-width:680px){.lb-nav{width:44px;height:44px;font-size:22px}.lb-info{padding:16px 20px}.lb-zoomhint{display:none}}
+
+/* ── TENGE FEATURE ───────────────────── */
+.tenge{background:var(--bg-2);overflow:hidden}
+.tenge .inner{display:grid;grid-template-columns:1.05fr 1fr;gap:80px;align-items:center}
+.tenge-fig{margin:0}
+.tenge-visual{aspect-ratio:2.12/1;position:relative;overflow:hidden;background:var(--surface)}
+.tenge-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.05)}
+.tenge-fig .note{margin-top:16px;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:15.5px;letter-spacing:.02em}
+.tenge h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(30px,4.4vw,50px);line-height:1.06;margin:18px 0 0}
+.tenge p{color:var(--muted);font-size:17.5px;margin-top:24px}
+.tenge .pull{margin-top:30px;padding-left:24px;border-left:1px solid var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;line-height:1.5;color:var(--text)}
+
+/* ── BIOGRAPHY TIMELINE ──────────────── */
+.timeline{position:relative;max-width:820px;margin:0 auto;padding-left:40px}
+.timeline::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:1px;background:var(--line)}
+.tl-item{position:relative;padding-bottom:54px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-44px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px var(--bg)}
+.tl-year{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);font-style:italic}
+.tl-item h4{font-size:18px;margin:6px 0 6px;font-weight:600}
+.tl-item p{color:var(--muted);font-size:15.5px}
+.bio-lead{max-width:760px;margin:-30px auto 64px;text-align:center;color:var(--muted);font-size:18px;line-height:1.75}
+.tl-item.tl-memorial::before{background:transparent;border:1.5px solid var(--gold);box-shadow:0 0 0 5px var(--bg)}
+.tl-item.tl-memorial h4{color:var(--gold)}
+/* ── BIOGRAPHY (двухколоночная + портрет) ── */
+.bio-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start}
+.bio-aside{position:sticky;top:118px}
+.bio-portrait{position:relative;aspect-ratio:4/5;max-width:370px;overflow:hidden;filter:grayscale(1) contrast(1.04)}
+.bio-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 14%}
+.bio-main .bio-lead{max-width:none;margin:0 0 42px;text-align:left;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.5;color:var(--text)}
+@media(max-width:880px){.bio-grid{grid-template-columns:1fr;gap:38px}.bio-aside{position:static}.bio-portrait{max-width:300px}}
+/* ── QUOTE BAND ── */
+.quote-band{padding:124px 0;text-align:center;position:relative}
+.quote-band .qhair{height:1px;max-width:520px;margin:0 auto;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.55}
+.quote-band blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:clamp(28px,4.4vw,52px);line-height:1.34;color:var(--text);max-width:980px;margin:36px auto 0}
+.quote-band .qtr{color:var(--muted);font-size:16px;margin-top:18px;font-style:italic}
+.quote-band .qtr:empty{display:none}
+.quote-band .qwho{margin-top:26px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.bio-p{color:var(--muted);font-size:16px;line-height:1.78;margin-bottom:26px}
+.bio-more{background:none;border:none;font:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);font-weight:600;padding:4px 0}
+.bio-more::after{content:"→";transition:transform .3s var(--ease)}
+.bio-more:hover{color:var(--gold)}
+.bio-more:hover::after{transform:translateX(5px)}
+.bio-extra{display:none}
+.bio-extra.open{display:block}
+
+/* ── AWARDS ──────────────────────────── */
+.awards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 72px}
+.award{border-top:1px solid var(--line);padding:32px 0 42px}
+.award .yr{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:var(--gold);display:block;line-height:1}
+.award h4{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:500;margin-top:12px}
+.award p{color:var(--muted);font-size:15px;margin-top:8px;max-width:440px}
+
+/* ── EXHIBITIONS ─────────────────────── */
+.exh-row{display:grid;grid-template-columns:120px 1fr auto;gap:30px;align-items:baseline;padding:30px 0;border-bottom:1px solid var(--line)}
+.exh-row:first-child{border-top:1px solid var(--line)}
+.exh-row .y{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--gold);font-style:italic}
+.exh-row h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500}
+.exh-row .place{color:var(--muted);font-size:14px;margin-top:4px}
+.exh-row .type{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+
+/* ── PRESS ───────────────────────────── */
+.press-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px 48px}
+.press-card{border-top:1px solid var(--line);padding:30px 0 0;cursor:pointer}
+.press-card .src{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.press-card h4{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:500;margin:16px 0 14px;line-height:1.25;transition:color .3s}
+.press-card:hover h4{color:var(--gold)}
+.press-card .arrow{color:var(--muted);font-size:15px;display:inline-block;transition:transform .35s var(--ease),color .3s}
+.press-card:hover .arrow{transform:translateX(7px);color:var(--gold)}
+
+/* ── ESSAY (лонгрид о творчестве) ────── */
+.essay{background:var(--bg-2)}
+.essay-banner{position:relative;height:62vh;min-height:440px;max-height:760px;overflow:hidden;display:flex;align-items:flex-end}
+.essay-banner-img{position:absolute;inset:0;background:url("assets/works/essay-steppe.jpg") center/cover no-repeat;transform:scale(1.06);will-change:transform;animation:steppepan 34s ease-in-out infinite alternate}
+@keyframes steppepan{from{transform:scale(1.06) translateX(2.2%)}to{transform:scale(1.06) translateX(-2.2%)}}
+.essay-banner-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,10,.14),rgba(20,16,10,0) 32%,rgba(20,16,10,.06) 58%,rgba(20,16,10,.6))}
+.essay-banner-text{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:0 32px 54px;color:#fff}
+.essay-banner-text .eyebrow{color:#fff;text-shadow:0 1px 14px rgba(0,0,0,.5)}
+.essay-banner-text h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(32px,5.2vw,62px);line-height:1.05;margin-top:16px;color:#fff;text-shadow:0 2px 26px rgba(0,0,0,.5),0 1px 3px rgba(0,0,0,.35)}
+.essay-banner-cap{position:absolute;right:0;bottom:0;z-index:2;padding:0 32px 20px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:rgba(255,255,255,.82);text-shadow:0 1px 12px rgba(0,0,0,.6)}
+@media(max-width:680px){.essay-banner{height:48vh;min-height:340px}.essay-banner-cap{display:none}}
+.essay-body{max-width:760px;margin:0 auto}
+.essay-body .lead{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.5vw,27px);line-height:1.5;color:var(--text);margin-bottom:42px}
+.essay-body h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(22px,2.7vw,31px);line-height:1.16;margin:46px 0 16px;color:var(--text)}
+.essay-body h3:first-of-type{margin-top:0}
+.essay-body p{color:var(--muted);font-size:16.5px;line-height:1.85;margin-bottom:18px}
+.essay-body .ded{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15.5px;letter-spacing:.04em;color:var(--gold);margin-bottom:30px;text-align:center}
+.essay-body .epi{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,2.2vw,22px);line-height:1.65;color:var(--text);text-align:center;margin:44px 0 0}
+.essay-sign{max-width:760px;margin:50px auto 0;padding-top:24px;border-top:1px solid var(--line);font-size:13px;letter-spacing:.03em;color:var(--faint);font-style:italic}
+
+/* ── CONTACT ─────────────────────────── */
+.contact{background:var(--bg-2)}
+.contact .inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.contact h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(32px,5vw,58px);line-height:1.05}
+.contact p{color:var(--muted);font-size:18px;margin-top:24px;max-width:420px}
+.form{display:flex;flex-direction:column;gap:26px}
+.form input,.form textarea{background:none;border:none;border-bottom:1px solid var(--line);border-radius:0;padding:12px 0;color:var(--text);font:inherit;font-size:15.5px;transition:border-color .3s}
+.form ::placeholder{color:var(--faint)}
+.form input:focus,.form textarea:focus{outline:none;border-bottom-color:var(--gold)}
+.form textarea{min-height:110px;resize:vertical}
+.form .btn-primary{justify-content:center;border:none;background:var(--gold);color:var(--bg);align-self:flex-start;padding:16px 42px;margin-top:6px}
+.form .btn-primary:hover{border-color:transparent;box-shadow:0 14px 30px -16px rgba(0,0,0,.45);transform:translateY(-2px)}
+
+/* ── FOOTER ──────────────────────────── */
+footer{background:var(--bg);border-top:1px solid var(--line);padding:70px 0 40px}
+.foot{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:40px}
+.foot .brand small{color:var(--gold)}
+.foot-nav{display:flex;gap:50px;flex-wrap:wrap}
+.foot-col h5{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:16px}
+.foot-col a{display:block;color:var(--muted);font-size:14px;padding:5px 0;transition:color .25s}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{margin-top:56px;padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;color:var(--faint);font-size:13px}
+
+/* ── RESPONSIVE ──────────────────────── */
+@media(max-width:980px){
+  .hero{padding:120px 0 70px}
+  .hero-grid{grid-template-columns:1fr;gap:42px}
+  .hero-frame{justify-self:start;width:100%;max-width:320px;margin-top:6px}
+  .tenge .inner,.contact .inner{grid-template-columns:1fr;gap:46px}
+  .gallery{column-count:2}
+  .press-grid{grid-template-columns:repeat(2,1fr)}
+  .stats .grid{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}
+  .awards-grid{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  .wrap{padding:0 22px}
+  .nav-links{display:none}
+  .burger{display:grid}
+  .nav .bar{padding:16px 18px}
+  .nav.scrolled .bar{padding:12px 18px}
+  .nav-tools{gap:9px}
+  .lang button{padding:6px 9px;font-size:11px}
+  .section{padding:90px 0}
+  .gallery{column-count:1}
+  .press-grid{grid-template-columns:1fr}
+  .exh-row{grid-template-columns:64px 1fr;gap:18px}
+  .exh-row .type{display:none}
+  .foot-nav{gap:32px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="bar">
+    <a href="#top" class="brand"><span data-i18n="brand_name">Дузельханов</span><small data-i18n="brand_sub">Народный художник РК</small></a>
+    <div class="nav-links">
+      <a href="#works" data-i18n="nav_works">Работы</a>
+      <a href="#tenge" data-i18n="nav_tenge">Художник тенге</a>
+      <a href="#bio" data-i18n="nav_bio">Биография</a>
+      <a href="#essay" data-i18n="nav_essay">Эссе</a>
+      <a href="#awards" data-i18n="nav_awards">Награды</a>
+      <a href="#contact" data-i18n="nav_contact">Контакты</a>
+    </div>
+    <div class="nav-tools">
+      <div class="lang" id="lang">
+        <button data-lang="kz" class="active">KZ</button>
+        <button data-lang="ru">RU</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <button class="icon-btn" id="theme" aria-label="Сменить тему">
+        <svg id="ico-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/></svg>
+      </button>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="menu-backdrop" id="menuBackdrop"></div>
+<aside class="mobile-menu" id="mobileMenu" aria-label="Навигация">
+  <a href="#works" data-i18n="nav_works">Работы</a>
+  <a href="#tenge" data-i18n="nav_tenge">Художник тенге</a>
+  <a href="#bio" data-i18n="nav_bio">Биография</a>
+  <a href="#essay" data-i18n="nav_essay">Эссе</a>
+  <a href="#awards" data-i18n="nav_awards">Награды</a>
+  <a href="#contact" data-i18n="nav_contact">Контакты</a>
+</aside>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-bg"><img src="assets/works/hero-hunt.jpg" alt="Охота — Агимсалы Дузельханов"></div>
+  <div class="hero-inner">
+    <span class="eyebrow reveal" data-i18n="hero_eyebrow">Живописец · График · Иллюстратор</span>
+    <h1 class="reveal" data-i18n="hero_title">Агимсалы<br><em>Дузельханов</em></h1>
+    <div class="hero-dates reveal">1951 — 2025</div>
+    <p class="lede reveal" data-i18n="hero_lede">Заслуженный деятель искусств Республики Казахстан, один из авторов дизайна национальной валюты — тенге. Лауреат Государственной премии РК.</p>
+    <div class="hero-cta reveal">
+      <a href="#works" class="btn btn-primary" data-i18n="hero_cta1">Смотреть работы</a>
+      <a href="#tenge" class="btn btn-ghost" data-i18n="hero_cta2">История тенге</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span></span><i data-i18n="scroll">Листайте</i></div>
+</header>
+
+<!-- BIOGRAPHY -->
+<section class="section" id="bio">
+  <div class="wrap">
+    <div class="bio-grid">
+      <aside class="bio-aside reveal">
+        <div class="section-head" style="margin-bottom:30px">
+          <span class="eyebrow" data-i18n="bio_eyebrow">Путь мастера</span>
+          <h2 data-i18n="bio_title">Биография</h2>
+        </div>
+        <div class="bio-portrait"><img src="assets/portrait.jpg" alt="Агимсалы Дузельханов"></div>
+      </aside>
+      <div class="bio-main reveal">
+        <p class="bio-lead" data-i18n="bio_lead">Агимсалы Дузельханов — заслуженный деятель искусств Казахстана, профессор Казахской национальной академии искусств им. Т. Жургенова.</p>
+        <p class="bio-p" data-i18n="bio_p2">Родился в 1951 году в Казалинске. Окончил Алматинское художественное училище имени Н. В. Гоголя и Московский институт имени В. И. Сурикова. Работал в области исторической живописи, станковой графики, плаката и книжной иллюстрации; оформил свыше 300 книг и более 50 плакатов. В 1992 году участвовал в создании дизайна тенге; удостоен Государственной премии РК и ордена «Құрмет».</p>
+        <div class="bio-extra" id="bioExtra">
+          <p class="bio-p" data-i18n="bio_p3">Творческую деятельность начал в 1975 году в издательствах «Өнер» и «Жалын». Член Союза художников СССР с 1985 года. Иллюстрировал школьные учебники нового поколения и написал учебные пособия по графике. В 2000 году вошёл в число 33 лучших художников мира на международной выставке-конкурсе ООН «Глобал Арт-2000» в Нью-Йорке.</p>
+          <p class="bio-p" data-i18n="bio_p4">Лауреат Государственной премии Республики Казахстан (2002), кавалер ордена «Құрмет» (2016). Его исторические полотна посвящены казахскому эпосу, тюркской цивилизации и культуре степи. Агимсалы Дузельханов ушёл из жизни 20 августа 2025 года — его наследие продолжает жить в искусстве Казахстана.</p>
+        </div>
+        <button class="bio-more" id="bioMore" data-i18n="bio_more">Читать далее</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section class="section" id="works">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="works_eyebrow">Собрание</span>
+      <h2 data-i18n="works_title">Избранные работы</h2>
+      <p data-i18n="works_sub">Историко-эпические полотна, графика и иллюстрация — отражение тюркской цивилизации, казахского эпоса и степной культуры.</p>
+    </div>
+    <div class="viewtabs reveal" id="viewtabs">
+      <button class="active" data-v="tech" data-i18n="v_tech">По технике</button>
+      <button data-v="cycle" data-i18n="v_cycle">По циклам</button>
+    </div>
+    <div class="filters reveal" id="filters">
+      <button class="active" data-f="all" data-i18n="f_all">Все</button>
+      <button data-f="oil" data-i18n="f_oil">Масло</button>
+      <button data-f="pencil" data-i18n="f_pencil">Графика · карандаш</button>
+      <button data-f="water" data-i18n="f_water">Акварель · гуашь</button>
+      <button data-f="sketch" data-i18n="f_sketch">Наброски и зарисовки</button>
+      <button data-f="kids" data-i18n="f_kids">Детские иллюстрации</button>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<!-- TENGE FEATURE -->
+<section class="section tenge" id="tenge">
+  <div class="wrap inner">
+    <figure class="tenge-fig reveal">
+      <div class="tenge-visual"><img src="assets/tenge/tenge-1.jpg" alt="Банкнота 100 тенге, 1993, с портретом Абылай хана" draggable="false"></div>
+      <figcaption class="note" data-i18n="tenge_note">100 теңге · 1993 · Абылай хан</figcaption>
+    </figure>
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="tenge_eyebrow">Особая страница</span>
+      <h2 data-i18n="tenge_title">Художник, чьи работы — в руках каждого казахстанца</h2>
+      <p data-i18n="tenge_text">В 1992 году Агимсалы Дузельханов вошёл в группу художников, которым доверили создать облик первой национальной валюты независимого Казахстана. Эскизы банкнот готовились в Алматы и дорабатывались вместе с британскими мастерами; первые тенге были введены в обращение в ноябре 1993 года. Так искусство художника оказалось в руках каждого казахстанца.</p>
+      <p data-i18n="tenge_text2">Он стал автором академических портретов выдающихся исторических личностей, запечатлённых на банкнотах. Эта работа требовала предельной точности: тончайшее перо, увеличительная лупа, нить за нитью — образ, достойный эпохи. Международные эксперты признали эти портреты образцом графического мастерства, а созданные им образы стали частью визуальной памяти независимого Казахстана.</p>
+      <div class="pull" data-i18n="tenge_pull">«Тенге — это не просто деньги. Это лицо молодого государства, его история и достоинство».</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-band">
+  <div class="wrap">
+    <div class="qhair reveal"></div>
+    <blockquote class="reveal">«Өнер — ағып жатқан бұлақ, ақыл — жанып тұрған шырақ»</blockquote>
+    <p class="qtr reveal" data-i18n="quote_tr">«Искусство — текущий родник, разум — горящий светильник»</p>
+    <div class="qwho reveal" data-i18n="quote_who">— Казахская народная пословица</div>
+    <div class="qhair reveal" style="margin-top:34px"></div>
+  </div>
+</section>
+
+<!-- ESSAY -->
+<section class="essay" id="essay">
+  <figure class="essay-banner reveal">
+    <div class="essay-banner-img"></div>
+    <div class="essay-banner-scrim"></div>
+    <div class="essay-banner-text">
+      <span class="eyebrow" data-i18n="es_eyebrow">Жизнь и творчество</span>
+      <h2 data-i18n="es_title">Кисть, держащая память степи</h2>
+    </div>
+    <figcaption class="essay-banner-cap" data-i18n="es_cap">Степные пейзажи. Из серии для Кызылорды</figcaption>
+  </figure>
+  <div class="wrap" style="padding-top:84px;padding-bottom:130px">
+    <div class="essay-body reveal" id="essayBody"></div>
+    <div class="essay-sign reveal" data-i18n="es_sign">Очерк подготовлен для сайта памяти художника.</div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="section" id="awards" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="aw_eyebrow">Признание</span>
+      <h2 data-i18n="aw_title">Звания и награды</h2>
+    </div>
+    <div class="awards-grid reveal">
+      <div class="award"><span class="yr">2002</span><h4 data-i18n="aw1_t">Государственная премия РК</h4><p data-i18n="aw1_p">За серию исторических полотен о Казахстане.</p></div>
+      <div class="award"><span class="yr">2016</span><h4 data-i18n="aw2_t">Орден «Құрмет»</h4><p data-i18n="aw2_p">За значительный вклад в развитие изобразительного искусства Казахстана.</p></div>
+      <div class="award"><span class="yr">1996</span><h4 data-i18n="aw3_t">Заслуженный деятель искусств РК</h4><p data-i18n="aw3_p">Указом Президента Республики Казахстан.</p></div>
+      <div class="award"><span class="yr">2000</span><h4 data-i18n="aw4_t">«Глобал Арт-2000»</h4><p data-i18n="aw4_p">В числе 33 лучших художников из более чем 100 стран (ООН, Нью-Йорк).</p></div>
+      <div class="award"><span class="yr">—</span><h4 data-i18n="aw5_t">Премии Абая и Алишера Навои</h4><p data-i18n="aw5_p">А также премия «Лучшая книга» (Ташкент) и всесоюзные дипломы 1985–1987 годов.</p></div>
+      <div class="award"><span class="yr">—</span><h4 data-i18n="aw6_t">Работы в резиденциях президентов</h4><p data-i18n="aw6_p">Казахстан (Алматы, Астана) и Туркменистан (Ашхабад).</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="wrap inner">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="ct_eyebrow">Связь</span>
+      <h2 data-i18n="ct_title">Связаться с художником</h2>
+      <p data-i18n="ct_text">Для музеев, галерей, кураторов и исследователей. Напишите — и мы ответим в ближайшее время.</p>
+    </div>
+    <form class="form reveal" onsubmit="event.preventDefault();this.querySelector('button').textContent='✓ '+(I18N[LANG].ct_sent);">
+      <input type="text" placeholder="Имя" data-i18n-ph="ct_name" required />
+      <input type="email" placeholder="E-mail" data-i18n-ph="ct_email" required />
+      <textarea placeholder="Сообщение" data-i18n-ph="ct_msg"></textarea>
+      <button type="submit" class="btn btn-primary" data-i18n="ct_send">Отправить</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#top" class="brand"><span data-i18n="brand_name">Дузельханов</span><small data-i18n="brand_sub">Народный художник РК</small></a>
+        <p style="color:var(--muted);font-size:14px;margin-top:18px;max-width:280px" data-i18n="foot_tag">Живопись, графика и иллюстрация, посвящённые истории и культуре Казахстана.</p>
+      </div>
+      <div class="foot-nav">
+        <div class="foot-col"><h5 data-i18n="foot_explore">Разделы</h5>
+          <a href="#works" data-i18n="nav_works">Работы</a><a href="#tenge" data-i18n="nav_tenge">Художник тенге</a><a href="#bio" data-i18n="nav_bio">Биография</a></div>
+        <div class="foot-col"><h5 data-i18n="foot_more">Ещё</h5>
+          <a href="#awards" data-i18n="nav_awards">Награды</a><a href="#essay" data-i18n="nav_essay">Эссе</a></div>
+        <div class="foot-col"><h5 data-i18n="foot_contact">Контакты</h5>
+          <a href="#contact" data-i18n="nav_contact">Написать</a><a href="#">Instagram</a><a href="#">Facebook</a></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Ағымсалы Дүзелханов (1951–2025)</span>
+      <span data-i18n="foot_made">Все права защищены. Изображения работ — собственность семьи художника.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Закрыть">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Предыдущая">‹</button>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Следующая">›</button>
+  <div class="lb-stage" id="lbStage">
+    <img id="lbImg" src="" alt="" draggable="false">
+    <div class="lb-wm"></div>
+  </div>
+  <div class="lb-info">
+    <h3 id="lbTitle"></h3>
+    <p id="lbDetail"></p>
+    <span class="lb-cycle" id="lbCycle"></span>
+    <span class="lb-zoomhint" id="lbHint" data-i18n="lb_hint">Клик — увеличить · колесо — зум · перетащить — двигать</span>
+  </div>
+</div>
+
+<script src="works-data.js"></script>
+<script>
+/* ── WORKS DATA: WORKS загружается из works-data.js ── */
+/* ===== legacy inline catalog disabled =====
+const OIL={ru:"Холст, масло",kz:"Кенеп, май бояу",en:"Oil on canvas"};
+const PAP={ru:"Бумага, карандаш",kz:"Қағаз, қарындаш",en:"Pencil on paper"};
+const AQ={ru:"Бумага, акварель",kz:"Қағаз, акварель",en:"Watercolour on paper"};
+const KIDS={ru:"Книжная иллюстрация",kz:"Кітап суреті",en:"Book illustration"};
+const LITHO={ru:"Литография",kz:"Литография",en:"Lithograph"};
+const ZAR={ru:"Бумага, карандаш",kz:"Қағаз, қарындаш",en:"Pencil on paper"};
+const d=(base,tail)=>({ru:base.ru+(tail?" · "+tail:""),kz:base.kz+(tail?" · "+tail:""),en:base.en+(tail?" · "+tail:"")});
+const WORKS=[
+  {img:"assets/works/oil-tomiris.jpg",f:"oil",c:"rulers",t:{ru:"Томирис",kz:"Томирис",en:"Tomyris"},d:d(OIL,"цикл «Саки»")},
+  {img:"assets/works/oil-golden-warrior.jpg",f:"oil",c:"rulers",t:{ru:"Золотой воин",kz:"Алтын адам",en:"The Golden Warrior"},d:d(OIL,"160×120 · 1999")},
+  {img:"assets/works/oil-oguz-khan.jpg",f:"oil",c:"rulers",t:{ru:"Огуз хан",kz:"Оғыз хан",en:"Oguz Khan"},d:d(OIL,"285×180 · 1996 · Ашхабад")},
+  {img:"assets/works/oil-amazon.jpg",f:"oil",c:"rulers",t:{ru:"Амазонка",kz:"Амазонка",en:"The Amazon"},d:d(OIL,"80×150 · 2020")},
+  {img:"assets/works/oil-bogenbay.jpg",f:"oil",c:"rulers",t:{ru:"Богенбай батыр",kz:"Бөгенбай батыр",en:"Bogenbay Batyr"},d:d(OIL,"2020")},
+  {img:"assets/works/oil-ablaikhan.jpg",f:"oil",c:"rulers",t:{ru:"Абылай хан",kz:"Абылай хан",en:"Ablai Khan"},d:d(OIL,"90×70 · 1996 · Резиденция Президента РК")},
+  {img:"assets/works/oil-korkyt.jpg",f:"oil",c:"lyric",t:{ru:"Легенда о Коркыт-ата",kz:"Қорқыт ата туралы аңыз",en:"The Legend of Korkyt Ata"},d:d(OIL,"120×90 · 1998")},
+  {img:"assets/works/oil-farewell.jpg",f:"oil",c:"lyric",t:{ru:"Проводы",kz:"Шығарып салу",en:"The Farewell"},d:d(OIL,"75×150 · 2022")},
+  {img:"assets/works/oil-caravan.jpg",f:"oil",c:"landscape",t:{ru:"Караван. Шёлковый путь",kz:"Керуен. Жібек жолы",en:"Caravan. The Silk Road"},d:d(OIL,"280×140 · 2017")},
+  {img:"assets/works/oil-turkestan.jpg",f:"oil",c:"landscape",t:{ru:"Туркестан. Шёлковый путь",kz:"Түркістан. Жібек жолы",en:"Turkestan. The Silk Road"},d:d(OIL,"120×90 · 1999")},
+  {img:"assets/works/oil-kokpar.jpg",f:"oil",c:"landscape",t:{ru:"Кокпар",kz:"Көкпар",en:"Kokpar"},d:OIL},
+  {img:"assets/works/oil-ablai-bukhar.jpg",f:"oil",c:"rulers",t:{ru:"Абылай хан и Бухар жырау",kz:"Абылай хан мен Бұқар жырау",en:"Ablai Khan and Bukhar Zhyrau"},d:d(OIL,"160×120 · 1998")},
+  {img:"assets/works/oil-kultegin.jpg",f:"oil",c:"rulers",t:{ru:"Культегин",kz:"Күлтегін",en:"Kultegin"},d:OIL},
+  {img:"assets/works/oil-chingizkhan.jpg",f:"oil",c:"rulers",t:{ru:"Чингиз хан",kz:"Шыңғыс хан",en:"Genghis Khan"},d:OIL},
+  {img:"assets/works/oil-saki.jpg",f:"oil",c:"rulers",t:{ru:"Саки",kz:"Сақтар",en:"The Saka"},d:d(OIL,"60×120")},
+  {img:"assets/works/oil-kokshetau.jpg",f:"oil",c:"landscape",t:{ru:"Кокшетау",kz:"Көкшетау",en:"Kokshetau"},d:d(OIL,"135×70")},
+  {img:"assets/works/oil-hunt.jpg",f:"oil",c:"landscape",t:{ru:"Охота",kz:"Аң аулау",en:"The Hunt"},d:d(OIL,"120×90 · 2016")},
+  {img:"assets/works/oil-spring.jpg",f:"oil",c:"lyric",t:{ru:"Весна",kz:"Көктем",en:"Spring"},d:d(OIL,"120×90 · 1998")},
+  {img:"assets/works/oil-nauryz.jpg",f:"oil",c:"lyric",t:{ru:"Наурыз",kz:"Наурыз",en:"Nauryz"},d:d(OIL,"70×40 · 1999")},
+  {img:"assets/works/oil-saukele.jpg",f:"oil",c:"lyric",t:{ru:"Девушка в саукеле",kz:"Сәукелелі қыз",en:"Girl in a Saukele"},d:d(OIL,"70×55 · 1996")},
+  {img:"assets/works/oil-bride.jpg",f:"oil",c:"lyric",t:{ru:"Невеста",kz:"Қалыңдық",en:"The Bride"},d:OIL},
+  {img:"assets/works/oil-farabi.jpg",f:"oil",c:"lyric",t:{ru:"Аль-Фараби",kz:"Әл-Фараби",en:"Al-Farabi"},d:OIL},
+  {img:"assets/works/oil-adyraspan.jpg",f:"oil",c:"lyric",t:{ru:"Адыраспан",kz:"Адыраспан",en:"Adyraspan"},d:d(OIL,"120×90 · 2001")},
+  {img:"assets/works/oil-kizirbaba.jpg",f:"oil",c:"lyric",t:{ru:"Кызыр баба",kz:"Қызыр баба",en:"Kyzyr Baba"},d:OIL},
+  {img:"assets/works/oil-syralash.jpg",f:"oil",c:"lyric",t:{ru:"Мать Сыр-Алаша",kz:"Сыр-Алаштың анасы",en:"Mother of Syr-Alash"},d:OIL},
+  {img:"assets/works/pencil-shirak.jpg",f:"pencil",c:"rulers",t:{ru:"Подвиг Ширака",kz:"Ширақ ерлігі",en:"The Feat of Shirak"},d:d(LITHO,"55×40 · 1986")},
+  {img:"assets/works/pencil-cyrus.jpg",f:"pencil",c:"rulers",t:{ru:"Царь Кир",kz:"Кир патша",en:"King Cyrus"},d:d(LITHO,"55×40 · 1986")},
+  {img:"assets/works/pencil-chingiz.jpg",f:"pencil",c:"rulers",t:{ru:"Провозглашение Чингисхана",kz:"Шыңғыс ханның жариялануы",en:"The Proclamation of Genghis Khan"},d:PAP},
+  {img:"assets/works/pencil-ayman-sholpan.jpg",f:"pencil",c:"lyric",t:{ru:"Айман-Шолпан",kz:"Айман-Шолпан",en:"Aiman-Sholpan"},d:d(PAP,"56×44 · 2013")},
+  {img:"assets/works/pencil-kyz-zhibek.jpg",f:"pencil",c:"lyric",t:{ru:"Кыз-Жибек",kz:"Қыз Жібек",en:"Kyz-Zhibek"},d:d(PAP,"56×44 · 2013")},
+  {img:"assets/works/pencil-toi.jpg",f:"pencil",c:"lyric",t:{ru:"Той",kz:"Той",en:"The Toi"},d:d(PAP,"57×38 · 2017")},
+  {img:"assets/works/pencil-lullaby.jpg",f:"pencil",c:"lyric",t:{ru:"Колыбельная",kz:"Бесік жыры",en:"Lullaby"},d:d(PAP,"44×33 · 1977")},
+  {img:"assets/works/pencil-alpamys.jpg",f:"pencil",c:"illustr",t:{ru:"Алпамыс",kz:"Алпамыс",en:"Alpamys"},d:d(PAP,"56×44 · 2013")},
+  {img:"assets/works/pencil-kambar.jpg",f:"pencil",c:"illustr",t:{ru:"Камбар батыр",kz:"Қамбар батыр",en:"Kambar Batyr"},d:d(PAP,"56×44 · 2013")},
+  {img:"assets/works/pencil-koblandy.jpg",f:"pencil",c:"illustr",t:{ru:"Кобланды",kz:"Қобыланды",en:"Koblandy"},d:d(PAP,"56×44 · 2013")},
+  {img:"assets/works/pencil-return.jpg",f:"pencil",c:"illustr",t:{ru:"Возвращение войска Чингисхана",kz:"Шыңғыс хан әскерінің оралуы",en:"Return of Genghis Khan's Army"},d:d(PAP,"51×33")},
+  {img:"assets/works/water-kazakh-khanate.jpg",f:"water",c:"rulers",t:{ru:"Казахское ханство",kz:"Қазақ хандығы",en:"The Kazakh Khanate"},d:d(AQ,"55×40 · 2015")},
+  {img:"assets/works/water-yesim-khan.jpg",f:"water",c:"rulers",t:{ru:"Есим хан",kz:"Есім хан",en:"Yesim Khan"},d:AQ},
+  {img:"assets/works/water-ablaikhan.jpg",f:"water",c:"rulers",t:{ru:"Абылай хан",kz:"Абылай хан",en:"Ablai Khan"},d:AQ},
+  {img:"assets/works/water-abulkhair.jpg",f:"water",c:"rulers",t:{ru:"Абулхаир хан",kz:"Әбілқайыр хан",en:"Abulkhair Khan"},d:AQ},
+  {img:"assets/works/water-orazkhan.jpg",f:"water",c:"rulers",t:{ru:"Ораз хан",kz:"Ораз хан",en:"Oraz Khan"},d:AQ},
+  {img:"assets/works/water-taraz.jpg",f:"water",c:"rulers",t:{ru:"Провозглашение хана",kz:"Хан көтеру",en:"Proclaiming the Khan"},d:AQ},
+  {img:"assets/works/water-bride.jpg",f:"water",c:"lyric",t:{ru:"Невеста подводного ханства",kz:"Су астындағы хандықтың қалыңдығы",en:"Bride of the Underwater Khanate"},d:d(AQ,"58×38 · 2016")},
+  {img:"assets/works/water-echo.jpg",f:"water",c:"landscape",t:{ru:"Эхо веков",kz:"Ғасырлар үні",en:"Echo of Centuries"},d:d(AQ,"60×40 · 2016")},
+  {img:"assets/works/water-kagan.jpg",f:"water",c:"illustr",t:{ru:"Каган Моде",kz:"Моде қаған",en:"Kagan Mode"},d:d(AQ,"иллюстрация")},
+  {img:"assets/works/water-yertargyn.jpg",f:"water",c:"illustr",t:{ru:"Ер-Таргын",kz:"Ер Тарғын",en:"Yer-Targyn"},d:d(AQ,"56×44 · 2013")},
+  {img:"assets/works/sketch-warrior.jpg",f:"sketch",c:"sketches",t:{ru:"Сак-воин",kz:"Сақ жауынгері",en:"Saka Warrior"},d:ZAR},
+  {img:"assets/works/sketch-05.jpg",f:"sketch",c:"sketches",t:{ru:"Воины-саки",kz:"Сақ жауынгерлері",en:"Saka Warriors"},d:ZAR},
+  {img:"assets/works/sketch-walk.jpg",f:"sketch",c:"sketches",t:{ru:"Странница",kz:"Жолаушы",en:"The Wayfarer"},d:ZAR},
+  {img:"assets/works/sketch-03.jpg",f:"sketch",c:"sketches",t:{ru:"Степная фигура",kz:"Дала бейнесі",en:"Steppe Figure"},d:ZAR},
+  {img:"assets/works/sketch-dombra.jpg",f:"sketch",c:"sketches",t:{ru:"Жырау",kz:"Жырау",en:"The Zhyrau"},d:ZAR},
+  {img:"assets/works/sketch-07.jpg",f:"sketch",c:"sketches",t:{ru:"Камбар",kz:"Қамбар",en:"Kambar"},d:ZAR},
+  {img:"assets/works/sketch-04.jpg",f:"sketch",c:"sketches",t:{ru:"Зарисовка",kz:"Эскиз",en:"Study"},d:ZAR},
+  {img:"assets/works/kids-doll.jpg",f:"kids",c:"kids",t:{ru:"Кукла",kz:"Қуыршақ",en:"The Doll"},d:KIDS},
+  {img:"assets/works/kids-toys.jpg",f:"kids",c:"kids",t:{ru:"Игрушки",kz:"Ойыншықтар",en:"Toys"},d:KIDS},
+  {img:"assets/works/kids-warrior.jpg",f:"kids",c:"kids",t:{ru:"Маленький воин",kz:"Кішкентай батыр",en:"The Little Warrior"},d:KIDS},
+  {img:"assets/works/kids-rider.jpg",f:"kids",c:"kids",t:{ru:"Юный наездник",kz:"Кішкентай салт атты",en:"The Young Rider"},d:KIDS},
+  {img:"assets/works/kids-kuishi.jpg",f:"kids",c:"kids",t:{ru:"Юный кюйши",kz:"Кішкентай күйші",en:"The Young Kuishi"},d:KIDS},
+  {img:"assets/works/kids-winter.jpg",f:"kids",c:"kids",t:{ru:"Зимняя сказка",kz:"Қысқы ертегі",en:"A Winter Tale"},d:KIDS},
+  {img:"assets/works/kids-fox.jpg",f:"kids",c:"kids",t:{ru:"Лиса-музыкант",kz:"Сыбызғышы түлкі",en:"The Fox Musician"},d:KIDS},
+  {img:"assets/works/kids-wolf.jpg",f:"kids",c:"kids",t:{ru:"Волк-кюйши",kz:"Қасқыр күйші",en:"The Wolf Musician"},d:KIDS},
+  {img:"assets/works/kids-orchestra.jpg",f:"kids",c:"kids",t:{ru:"Звериный оркестр",kz:"Аң-құстар оркестрі",en:"The Animal Orchestra"},d:KIDS},
+  {img:"assets/works/kids-mischief.jpg",f:"kids",c:"kids",t:{ru:"Озорник",kz:"Тентек",en:"The Little Imp"},d:KIDS},
+  {img:"assets/works/kids-flight.jpg",f:"kids",c:"kids",t:{ru:"Летающий малыш",kz:"Ұшқан сәби",en:"Little Flyer"},d:KIDS},
+];
+===== end legacy inline catalog ===== */
+const CATLABEL={oil:{ru:"Масло",kz:"Май бояу",en:"Oil"},pencil:{ru:"Графика · карандаш",kz:"Қарындаш",en:"Pencil"},water:{ru:"Акварель · гуашь",kz:"Акварель",en:"Watercolour"},sketch:{ru:"Набросок",kz:"Эскиз",en:"Study"},kids:{ru:"Детская иллюстрация",kz:"Балалар суреті",en:"Children's"}};
+const CYCLES={rulers:{ru:"Ханы и правители",kz:"Хандар мен билеушілер",en:"Khans & Rulers"},lyric:{ru:"Лирика",kz:"Лирика",en:"Lyric"},landscape:{ru:"Пейзажи",kz:"Пейзаждар",en:"Landscapes"},illustr:{ru:"Иллюстрации",kz:"Иллюстрациялар",en:"Illustrations"},sketches:{ru:"Наброски и зарисовки",kz:"Эскиздер мен жобалар",en:"Sketches & Studies"},misc:{ru:"На разбор",kz:"Сұрыптауға",en:"To sort"},folktales:{ru:"Казахские народные сказки",kz:"Қазақ халық ертегілері",en:"Kazakh Folk Tales"},kids:{ru:"Детские иллюстрации",kz:"Балалар суреттері",en:"Children's illustration"}};
+const CYCLE_ORDER=["rulers","lyric","landscape","illustr","sketches","kids"];
+
+let LANG='kz', FILTER='all', VIEW='tech';
+function makeCard(w,i){
+  const el=document.createElement('div');
+  el.className='art reveal';
+  el.style.transitionDelay=((i%3)*0.07)+'s';
+  el.dataset.idx=WORKS.indexOf(w);
+  const thumb=w.img.replace('assets/works/','assets/works/thumb/');
+  el.innerHTML=`<div class="art-pic"><img src="${thumb}" alt="${w.t[LANG]}" loading="lazy" draggable="false"><span class="art-guard"></span></div>
+    <div class="meta"><h4>${w.t[LANG]}</h4><p>${w.d[LANG]}</p></div>`;
+  if(window.__io) window.__io.observe(el);
+  return el;
+}
+function renderGallery(){
+  const g=document.getElementById('gallery');
+  const filters=document.getElementById('filters');
+  g.innerHTML='';
+  if(VIEW==='cycle'){
+    filters.style.display='none';
+    g.className='gallery-cycles';
+    CYCLE_ORDER.forEach(ck=>{
+      const items=WORKS.filter(w=>w.c===ck);
+      const sec=document.createElement('div');sec.className='cycle-group reveal';
+      sec.innerHTML=`<div class="cycle-head"><h3>${CYCLES[ck][LANG]}</h3><span class="cycle-count">${items.length||''}</span></div>`;
+      if(items.length){
+        const grid=document.createElement('div');grid.className='gallery';
+        items.forEach((w,i)=>grid.appendChild(makeCard(w,i)));
+        sec.appendChild(grid);
+      } else {
+        const e=document.createElement('div');e.className='cycle-empty';e.textContent=I18N[LANG].cyc_soon;sec.appendChild(e);
+      }
+      g.appendChild(sec);
+      if(window.__io) window.__io.observe(sec);
+    });
+  } else {
+    filters.style.display='flex';
+    g.className='gallery';
+    WORKS.filter(w=>FILTER==='all'||w.f===FILTER).forEach((w,i)=>g.appendChild(makeCard(w,i)));
+  }
+}
+
+/* ── I18N ── */
+const I18N={
+ ru:{brand_name:"Дузельханов",brand_sub:"Художник · 1951–2025",nav_works:"Работы",nav_tenge:"Художник тенге",nav_bio:"Биография",nav_essay:"Эссе",nav_awards:"Награды",nav_exh:"Выставки",nav_contact:"Контакты",
+  es_eyebrow:"Жизнь и творчество",es_title:"Кисть, держащая память степи",es_cap:"Степные пейзажи. Из серии для Кызылорды",es_sign:"Очерк подготовлен для сайта памяти художника.",
+  hero_eyebrow:"Живописец · График · Иллюстратор",hero_title:"Агимсалы<br><em>Дузельханов</em>",hero_lede:"Заслуженный деятель искусств Республики Казахстан, один из авторов дизайна национальной валюты — тенге. Лауреат Государственной премии РК.",hero_cta1:"Смотреть работы",hero_cta2:"История тенге",hero_frame:"Портрет художника<br>в мастерской",scroll:"Листайте",
+  st_books:"оформленных книг",st_posters:"авторских плакатов",st_tenge:"дизайн тенге",st_years:"лет в искусстве",
+  works_eyebrow:"Собрание",works_title:"Избранные работы",works_sub:"Историко-эпические полотна, графика и иллюстрация — отражение тюркской цивилизации, казахского эпоса и степной культуры.",
+  v_tech:"По технике",v_cycle:"По циклам",lb_hint:"Клик — увеличить · колесо — зум · перетащить — двигать",
+  f_all:"Все",f_oil:"Масло",f_pencil:"Графика · карандаш",f_water:"Акварель · гуашь",f_sketch:"Наброски и зарисовки",f_kazakh:"Казахские персонажи",f_kids:"Детские иллюстрации",cyc_soon:"Работы готовятся к публикации",
+  ph_work:"Изображение работы",ph_detail:"Холст, масло",
+  tenge_eyebrow:"Особая страница",tenge_note:"100 тенге · 1993 · Абылай хан",tenge_title:"Художник, чьи работы — в руках каждого казахстанца",tenge_text:"В 1992 году Агимсалы Дузельханов вошёл в группу художников, которым доверили создать облик первой национальной валюты независимого Казахстана. Эскизы банкнот готовились в Алматы и дорабатывались вместе с британскими мастерами; первые тенге были введены в обращение в ноябре 1993 года. Так искусство художника оказалось в руках каждого казахстанца.",tenge_text2:"Он стал автором академических портретов выдающихся исторических личностей, запечатлённых на банкнотах. Эта работа требовала предельной точности: тончайшее перо, увеличительная лупа, нить за нитью — образ, достойный эпохи. Международные эксперты признали эти портреты образцом графического мастерства, а созданные им образы стали частью визуальной памяти независимого Казахстана.",tenge_pull:"«Тенге — это не просто деньги. Это лицо молодого государства, его история и достоинство».",
+  bio_eyebrow:"Путь мастера",bio_title:"Биография",bio_lead:"Агимсалы Дузельханов — заслуженный деятель искусств Казахстана, профессор Казахской национальной академии искусств им. Т. Жургенова.",bio_p2:"Родился в 1951 году в Казалинске. Окончил Алматинское художественное училище имени Н. В. Гоголя и Московский институт имени В. И. Сурикова. Работал в области исторической живописи, станковой графики, плаката и книжной иллюстрации; оформил свыше 300 книг и более 50 плакатов. В 1992 году участвовал в создании дизайна тенге; удостоен Государственной премии РК и ордена «Құрмет». Его полотна хранятся в резиденциях президентов Казахстана и Туркменистана.",bio_more:"Читать далее",bio_p3:"Творческую деятельность начал в 1975 году в издательствах «Өнер» и «Жалын». Член Союза художников СССР с 1985 года. Иллюстрировал школьные учебники нового поколения и написал учебные пособия по графике. В 2000 году вошёл в число 33 лучших художников мира на международной выставке-конкурсе ООН «Глобал Арт-2000» в Нью-Йорке.",bio_p4:"Лауреат Государственной премии Республики Казахстан (2002), кавалер ордена «Құрмет» (2016). Его исторические полотна посвящены казахскому эпосу, тюркской цивилизации и культуре степи. Агимсалы Дузельханов ушёл из жизни 20 августа 2025 года — его наследие продолжает жить в искусстве Казахстана.",
+  b1_t:"Рождение",b1_p:"Родился 19 августа 1951 года в городе Казалинск Кызылординской области.",b2_t:"Служба в армии",b2_p:"Служил в рядах Советской Армии.",b3_t:"Начало творческого пути",b3_p:"Начал работать в издательствах «Өнер» и «Жалын», сотрудничал с «Жазушы», «Балдырган» и другими.",b4_t:"Художественное училище",b4_p:"Окончил Алматинское художественное училище имени Н. В. Гоголя.",b5_t:"Институт имени Сурикова",b5_p:"Окончил Московский государственный художественный институт им. В. И. Сурикова. Начал преподавать на кафедре «Графический дизайн».",b6_t:"Союз художников СССР",b6_p:"Принят в члены Союза художников СССР.",b7_t:"Дизайн тенге",b7_p:"Вошёл в группу художников, разработавших дизайн первой национальной валюты — тенге.",b8_t:"Заслуженный деятель искусств",b8_p:"Указом Президента РК удостоен звания «Заслуженный деятель искусств Республики Казахстан».",b9_t:"«Глобал Арт-2000»",b9_p:"Победитель международной выставки-конкурса ООН в Нью-Йорке; вошёл в число 33 лучших художников из более чем 100 стран.",b10_t:"Государственная премия РК",b10_p:"Лауреат Государственной премии Республики Казахстан за серию исторических полотен о Казахстане.",b11_t:"Орден «Құрмет»",b11_p:"Награждён орденом «Құрмет» за вклад в изобразительное искусство Казахстана.",b12_t:"Светлая память",b12_p:"Ушёл из жизни 20 августа 2025 года. Наследие художника продолжает жить в искусстве Казахстана.",quote_tr:"«Искусство — текущий родник, разум — горящий светильник»",quote_who:"— Казахская народная пословица",
+  aw_eyebrow:"Признание",aw_title:"Звания и награды",aw1_t:"Государственная премия РК",aw1_p:"За серию исторических полотен о Казахстане.",aw2_t:"Орден «Құрмет»",aw2_p:"За значительный вклад в развитие изобразительного искусства Казахстана.",aw3_t:"Заслуженный деятель искусств РК",aw3_p:"Указом Президента Республики Казахстан.",aw4_t:"«Глобал Арт-2000»",aw4_p:"В числе 33 лучших художников из более чем 100 стран (ООН, Нью-Йорк).",aw5_t:"Премии Абая и Алишера Навои",aw5_p:"А также премия «Лучшая книга» (Ташкент) и всесоюзные дипломы 1985–1987 годов.",aw6_t:"Работы в резиденциях президентов",aw6_p:"Казахстан (Алматы, Астана) и Туркменистан (Ашхабад).",
+  ex_eyebrow:"Хроника",ex_title:"Выставки и проекты",ex1_t:"Global ART 2000",ex1_p:"США · проект под эгидой ООН",ex2_t:"Персональные выставки",ex2_p:"Алматы · Астана · Казахстан",ex3_t:"Резиденции глав государств",ex3_p:"Казахстан · Туркменистан",ex_int:"Международная",ex_solo:"Персональная",ex_coll:"Собрание",
+  pr_eyebrow:"О художнике пишут",pr_title:"Пресса и публикации",pr1_s:"Национальный банк РК",pr1_t:"Как создавался дизайн первого тенге",pr2_s:"Академия им. Жургенова",pr2_t:"Профессор, воспитавший поколения художников",pr3_s:"Art Nomad",pr3_t:"Мастер исторического жанра Казахстана",
+  ct_eyebrow:"Связь",ct_title:"Связаться с семьёй художника",ct_text:"По вопросам выставок, публикаций и наследия — для музеев, галерей, кураторов и исследователей. Напишите, и мы ответим.",ct_name:"Имя",ct_email:"E-mail",ct_msg:"Сообщение",ct_send:"Отправить",ct_sent:"Отправлено",
+  foot_tag:"Живопись, графика и иллюстрация, посвящённые истории и культуре Казахстана.",foot_explore:"Разделы",foot_more:"Ещё",foot_contact:"Контакты",foot_made:"Все права защищены. Изображения работ — собственность семьи художника."},
+
+ kz:{brand_name:"Дүзелханов",brand_sub:"Суретші · 1951–2025",nav_works:"Жұмыстар",nav_tenge:"Теңге суретшісі",nav_bio:"Өмірбаян",nav_essay:"Эссе",nav_awards:"Марапаттар",nav_exh:"Көрмелер",nav_contact:"Байланыс",
+  es_eyebrow:"Өмірі мен шығармашылығы",es_title:"Дала жадын ұстаған қылқалам",es_cap:"Дала пейзаждары. Қызылордаға арналған топтамадан",es_sign:"Очерк суретші туралы сайт үшін дайындалды.",
+  hero_eyebrow:"Кескіндемеші · График · Иллюстратор",hero_title:"Ағымсалы<br><em>Дүзелханов</em>",hero_lede:"Қазақстанның еңбек сіңірген өнер қайраткері, ұлттық валюта — теңге дизайнының авторларының бірі. ҚР Мемлекеттік сыйлығының лауреаты.",hero_cta1:"Жұмыстарды көру",hero_cta2:"Теңге тарихы",hero_frame:"Шеберханадағы<br>суретші бейнесі",scroll:"Төмен қарай",
+  st_books:"безендірілген кітап",st_posters:"авторлық плакат",st_tenge:"теңге дизайны",st_years:"жыл өнерде",
+  works_eyebrow:"Жинақ",works_title:"Таңдаулы жұмыстар",works_sub:"Тарихи-эпикалық кенептер, график және иллюстрация — түркі өркениеті, қазақ эпосы мен дала мәдениетінің көрінісі.",
+  v_tech:"Техника бойынша",v_cycle:"Циклдар бойынша",lb_hint:"Басу — үлкейту · дөңгелек — масштаб · сүйреу — жылжыту",
+  f_all:"Барлығы",f_oil:"Май бояу",f_pencil:"График · қарындаш",f_water:"Акварель · гуашь",f_sketch:"Эскиздер мен жобалар",f_kazakh:"Қазақ бейнелері",f_kids:"Балалар суреттері",cyc_soon:"Жұмыстар жариялауға дайындалуда",
+  ph_work:"Жұмыс суреті",ph_detail:"Кенеп, май бояу",
+  tenge_eyebrow:"Ерекше бет",tenge_note:"100 теңге · 1993 · Абылай хан",tenge_title:"Жұмыстары әрбір қазақстандықтың қолында жүрген суретші",tenge_text:"1992 жылы Ағымсалы Дүзелханов тәуелсіз Қазақстанның алғашқы ұлттық валютасының бейнесін жасау сеніп тапсырылған суретшілер тобына кірді. Банкноттардың эскиздері Алматыда дайындалып, британдық шеберлермен бірге пысықталды; алғашқы теңге 1993 жылдың қарашасында айналымға енгізілді. Осылайша суретшінің өнері әрбір қазақстандықтың қолына тиді.",tenge_text2:"Ол банкноттарға таңбаланған көрнекті тарихи тұлғалардың академиялық портреттерінің авторы атанды. Бұл жұмыс аса жоғары дәлдікті талап етті: ең жіңішке қылқалам, үлкейткіш шыны, сызық сызықтан — дәуірге лайықты бейне. Халықаралық сарапшылар бұл портреттерді графикалық шеберліктің үлгісі ретінде мойындады, ал оның жасаған бейнелері тәуелсіз Қазақстанның көрнекі жадының бір бөлігіне айналды.",tenge_pull:"«Теңге — жай ақша емес. Бұл — жас мемлекеттің жүзі, оның тарихы мен абыройы».",
+  bio_eyebrow:"Шебер жолы",bio_title:"Өмірбаян",bio_lead:"Ағымсалы Дүзелханов — Қазақстанның еңбек сіңірген өнер қайраткері, Т. Жүргенов атындағы Қазақ ұлттық өнер академиясының профессоры.",bio_p2:"1951 жылы Қазалыда дүниеге келген. Н. В. Гоголь атындағы Алматы көркемсурет училищесін және В. И. Суриков атындағы Мәскеу институтын бітірген. Тарихи кескіндеме, станоктық график, плакат және кітап графикасы саласында жұмыс істеді; 300-ден астам кітап пен 50-ден аса плакат безендірді. 1992 жылы теңге дизайнын жасауға қатысты; ҚР Мемлекеттік сыйлығы мен «Құрмет» орденіне ие болды. Туындылары Қазақстан мен Түрікменстан президенттерінің резиденцияларында сақталады.",bio_more:"Толығырақ",bio_p3:"Шығармашылық қызметін 1975 жылы «Өнер» және «Жалын» баспаларында бастады. 1985 жылдан КСРО Суретшілер одағының мүшесі. Жаңа буын мектеп оқулықтарын безендірді, график бойынша оқу құралдарын жазды. 2000 жылы Нью-Йорктегі БҰҰ «Глобал Арт-2000» халықаралық көрме-байқауында әлемдегі 33 үздік суретшінің қатарына енді.",bio_p4:"Қазақстан Республикасы Мемлекеттік сыйлығының лауреаты (2002), «Құрмет» орденінің иегері (2016). Тарихи туындылары қазақ эпосына, түркі өркениеті мен дала мәдениетіне арналған. Ағымсалы Дүзелханов 2025 жылдың 20 тамызында өмірден озды — оның мұрасы Қазақстан өнерінде жалғасын табуда.",
+  b1_t:"Дүниеге келуі",b1_p:"1951 жылы 19 тамызда Қызылорда облысы, Қазалы қаласында дүниеге келді.",b2_t:"Әскери қызмет",b2_p:"Совет Армиясы қатарында қызмет етті.",b3_t:"Шығармашылық жолының басы",b3_p:"«Өнер» және «Жалын» баспаларында жұмыс істей бастады, «Жазушы», «Балдырған» және басқа баспалармен қызметтес болды.",b4_t:"Көркемсурет училищесі",b4_p:"Н. В. Гоголь атындағы Алматы көркемсурет училищесін бітірді.",b5_t:"Суриков институты",b5_p:"В. И. Суриков атындағы Мәскеу мемлекеттік көркемсурет институтын бітірді. «Графикалық дизайн» кафедрасында сабақ бере бастады.",b6_t:"КСРО Суретшілер одағы",b6_p:"КСРО Суретшілер одағының мүшелігіне қабылданды.",b7_t:"Теңге дизайны",b7_p:"Алғашқы ұлттық валюта — теңге дизайнын жасаған суретшілер тобына кірді.",b8_t:"Еңбек сіңірген өнер қайраткері",b8_p:"ҚР Президентінің Жарлығымен «Қазақстанның еңбек сіңірген өнер қайраткері» атағына ие болды.",b9_t:"«Глобал Арт-2000»",b9_p:"Нью-Йорктегі БҰҰ халықаралық көрме-байқауының жеңімпазы; 100-ден астам елдің ішінен 33 үздік суретшінің қатарына енді.",b10_t:"ҚР Мемлекеттік сыйлығы",b10_p:"Қазақстан туралы тарихи кенептер сериясы үшін Қазақстан Республикасы Мемлекеттік сыйлығының лауреаты.",b11_t:"«Құрмет» ордені",b11_p:"Қазақстанның бейнелеу өнеріне қосқан үлесі үшін «Құрмет» орденімен марапатталды.",b12_t:"Жарық есім",b12_p:"2025 жылдың 20 тамызында өмірден озды. Суретшінің мұрасы Қазақстан өнерінде жалғасын табуда.",quote_tr:"",quote_who:"— Қазақ халық мақалы",
+  aw_eyebrow:"Мойындау",aw_title:"Атақтар мен марапаттар",aw1_t:"Қазақстан Республикасының Мемлекеттік сыйлығының лауреаты",aw1_p:"Қазақстан туралы тарихи кенептер сериясы үшін.",aw2_t:"«Құрмет» ордені",aw2_p:"Қазақстанның бейнелеу өнерін дамытуға қосқан елеулі үлесі үшін.",aw3_t:"ҚР еңбек сіңірген өнер қайраткері",aw3_p:"Қазақстан Республикасы Президентінің Жарлығымен.",aw4_t:"«Глобал Арт-2000»",aw4_p:"100-ден астам елдің ішінен 33 үздік суретшінің қатарында (БҰҰ, Нью-Йорк).",aw5_t:"Абай және Әлішер Науаи сыйлықтары",aw5_p:"Сондай-ақ «Үздік кітап» сыйлығы (Ташкент) және 1985–1987 жылдардағы бүкілодақтық дипломдар.",aw6_t:"Президент резиденцияларындағы жұмыстар",aw6_p:"Қазақстан (Алматы, Астана) және Түрікменстан (Ашхабад).",
+  ex_eyebrow:"Шежіре",ex_title:"Көрмелер мен жобалар",ex1_t:"Global ART 2000",ex1_p:"АҚШ · БҰҰ аясындағы жоба",ex2_t:"Жеке көрмелер",ex2_p:"Алматы · Астана · Қазақстан",ex3_t:"Мемлекет басшыларының резиденциялары",ex3_p:"Қазақстан · Түрікменстан",ex_int:"Халықаралық",ex_solo:"Жеке",ex_coll:"Жинақ",
+  pr_eyebrow:"Суретші туралы",pr_title:"БАҚ және басылымдар",pr1_s:"ҚР Ұлттық банкі",pr1_t:"Алғашқы теңге дизайны қалай жасалды",pr2_s:"Жүргенов академиясы",pr2_t:"Ұрпақ тәрбиелеген ұстаз-профессор",pr3_s:"Art Nomad",pr3_t:"Қазақстанның тарихи жанр шебері",
+  ct_eyebrow:"Байланыс",ct_title:"Суретшінің отбасымен байланысу",ct_text:"Көрмелер, басылымдар және мұра мәселелері бойынша — мұражайлар, галереялар мен зерттеушілерге. Жазыңыз, жауап береміз.",ct_name:"Аты",ct_email:"E-mail",ct_msg:"Хабарлама",ct_send:"Жіберу",ct_sent:"Жіберілді",
+  foot_tag:"Қазақстан тарихы мен мәдениетіне арналған кескіндеме, график және иллюстрация.",foot_explore:"Бөлімдер",foot_more:"Тағы",foot_contact:"Байланыс",foot_made:"Барлық құқық қорғалған. Туындылардың суреттері — суретші отбасының меншігі."},
+
+ en:{brand_name:"Duzelkhanov",brand_sub:"Artist · 1951–2025",nav_works:"Works",nav_tenge:"Artist of the Tenge",nav_bio:"Biography",nav_essay:"Essay",nav_awards:"Awards",nav_exh:"Exhibitions",nav_contact:"Contact",
+  es_eyebrow:"Life and art",es_title:"A Brush That Holds the Memory of the Steppe",es_cap:"Steppe Landscapes. From the Kyzylorda series",es_sign:"An essay prepared for the artist's memorial site.",
+  hero_eyebrow:"Painter · Graphic artist · Illustrator",hero_title:"Agimsaly<br><em>Duzelkhanov</em>",hero_lede:"Honoured Artist of the Republic of Kazakhstan and one of the designers of the national currency — the tenge. Laureate of the State Prize of Kazakhstan.",hero_cta1:"View works",hero_cta2:"The tenge story",hero_frame:"Portrait of the artist<br>in his studio",scroll:"Scroll",
+  st_books:"books designed",st_posters:"original posters",st_tenge:"tenge design",st_years:"years in art",
+  works_eyebrow:"Collection",works_title:"Selected works",works_sub:"Historical and epic canvases, graphics and illustration — reflecting Turkic civilisation, Kazakh epic and the culture of the steppe.",
+  v_tech:"By technique",v_cycle:"By cycle",lb_hint:"Click to zoom · scroll to scale · drag to pan",
+  f_all:"All",f_oil:"Oil",f_pencil:"Graphics · pencil",f_water:"Watercolour · gouache",f_sketch:"Sketches & studies",f_kazakh:"Kazakh figures",f_kids:"Children's illustration",cyc_soon:"Works coming soon",
+  ph_work:"Artwork image",ph_detail:"Oil on canvas",
+  tenge_eyebrow:"A special page",tenge_note:"100 tenge · 1993 · Ablai Khan",tenge_title:"An artist whose work is in every Kazakhstani's hands",tenge_text:"In 1992, Agimsaly Duzelkhanov joined the group of artists entrusted with creating the look of the first national currency of independent Kazakhstan. The banknote sketches were prepared in Almaty and refined together with British masters; the first tenge entered circulation in November 1993. And so the artist's work came to be in the hands of every Kazakhstani.",tenge_text2:"He became the author of the academic portraits of outstanding historical figures depicted on the banknotes. The work demanded the utmost precision: the finest pen, a magnifying loupe, thread by thread — an image worthy of an epoch. International experts recognised these portraits as a benchmark of graphic mastery, and the images he created became part of the visual memory of independent Kazakhstan.",tenge_pull:"\"The tenge is not merely money. It is the face of a young state, its history and its dignity.\"",
+  bio_eyebrow:"The master's path",bio_title:"Biography",bio_lead:"Agimsaly Duzelkhanov was an Honoured Artist of Kazakhstan and a professor at the T. Zhurgenov Kazakh National Academy of Arts.",bio_p2:"Born in 1951 in Kazalinsk. He graduated from the N. V. Gogol Almaty Art College and the Surikov Institute in Moscow. He worked in historical painting, easel graphics, poster art and book illustration, designing over 300 books and more than 50 posters. In 1992 he took part in designing the tenge; he was awarded the State Prize and the Order of Kurmet. His canvases are held in the presidential residences of Kazakhstan and Turkmenistan.",bio_more:"Read more",bio_p3:"He began his creative career in 1975 with the Öner and Zhalyn publishing houses. A member of the USSR Union of Artists from 1985, he illustrated new-generation school textbooks and wrote teaching manuals on graphic art. In 2000 he was named among the 33 best artists in the world at the UN 'Global ART 2000' exhibition-contest in New York.",bio_p4:"Laureate of the State Prize of Kazakhstan (2002) and recipient of the Order of Kurmet (2016). His historical canvases are devoted to the Kazakh epic, Turkic civilisation and the culture of the steppe. Agimsaly Duzelkhanov passed away on 20 August 2025 — his legacy lives on in the art of Kazakhstan.",
+  b1_t:"Born",b1_p:"Born on 19 August 1951 in Kazalinsk, Kyzylorda Region.",b2_t:"Military service",b2_p:"Served in the Soviet Army.",b3_t:"First steps in art",b3_p:"Began working with the Öner and Zhalyn publishing houses, collaborating with Zhazushy, Baldyrgan and others.",b4_t:"Art College",b4_p:"Graduated from the N. V. Gogol Almaty Art College.",b5_t:"Surikov Institute",b5_p:"Graduated from the Surikov Moscow State Art Institute. Began teaching in the Graphic Design department.",b6_t:"USSR Union of Artists",b6_p:"Admitted as a member of the USSR Union of Artists.",b7_t:"Tenge design",b7_p:"Joined the group of artists who designed the first national currency — the tenge.",b8_t:"Honoured Artist",b8_p:"Awarded the title 'Honoured Artist of the Republic of Kazakhstan' by presidential decree.",b9_t:"Global ART 2000",b9_p:"Winner of the UN international exhibition-contest in New York; named among the 33 best artists from over 100 countries.",b10_t:"State Prize of Kazakhstan",b10_p:"Laureate of the State Prize of the Republic of Kazakhstan for a series of historical canvases about Kazakhstan.",b11_t:"Order of Kurmet",b11_p:"Awarded the Order of Kurmet for his contribution to the fine arts of Kazakhstan.",b12_t:"In memory",b12_p:"Passed away on 20 August 2025. The artist's legacy lives on in the art of Kazakhstan.",quote_tr:"\"Art is a flowing spring, the mind a burning candle\"",quote_who:"— Kazakh folk proverb",
+  aw_eyebrow:"Recognition",aw_title:"Titles & awards",aw1_t:"State Prize of Kazakhstan",aw1_p:"For a series of historical canvases about Kazakhstan.",aw2_t:"Order of Kurmet",aw2_p:"For a significant contribution to the fine arts of Kazakhstan.",aw3_t:"Honoured Artist of Kazakhstan",aw3_p:"By decree of the President of the Republic of Kazakhstan.",aw4_t:"Global ART 2000",aw4_p:"Among the 33 best artists from over 100 countries (UN, New York).",aw5_t:"Abai & Alisher Navoi Prizes",aw5_p:"As well as the 'Best Book' prize (Tashkent) and all-Union diplomas of 1985–1987.",aw6_t:"Works in presidential residences",aw6_p:"Kazakhstan (Almaty, Astana) and Turkmenistan (Ashgabat).",
+  ex_eyebrow:"Chronicle",ex_title:"Exhibitions & projects",ex1_t:"Global ART 2000",ex1_p:"USA · a UN-organised project",ex2_t:"Solo exhibitions",ex2_p:"Almaty · Astana · Kazakhstan",ex3_t:"Heads-of-state residences",ex3_p:"Kazakhstan · Turkmenistan",ex_int:"International",ex_solo:"Solo",ex_coll:"Collection",
+  pr_eyebrow:"In the press",pr_title:"Press & publications",pr1_s:"National Bank of Kazakhstan",pr1_t:"How the first tenge was designed",pr2_s:"Zhurgenov Academy",pr2_t:"The professor who taught generations of artists",pr3_s:"Art Nomad",pr3_t:"A master of Kazakhstan's historical genre",
+  ct_eyebrow:"Contact",ct_title:"Contact the artist's family",ct_text:"For exhibitions, publications and legacy matters — for museums, galleries, curators and researchers. Write to us and we will respond.",ct_name:"Name",ct_email:"E-mail",ct_msg:"Message",ct_send:"Send",ct_sent:"Sent",
+  foot_tag:"Painting, graphics and illustration devoted to the history and culture of Kazakhstan.",foot_explore:"Sections",foot_more:"More",foot_contact:"Contact",foot_made:"All rights reserved. Images of the works are the property of the artist's family."}
+};
+
+/* ── ESSAY (текст очерка, трёхъязычный) ── */
+const ESSAY={
+ ru:`<p class="ded">Памяти художника Агимсалы Дузельханова</p>
+<p class="lead">Есть художники, которые украшают эпоху. И есть те, кто её сохраняет. Агимсалы Дузельханов принадлежал ко вторым. Его кисть была не только инструментом творчества — она была свидетелем и хранителем. Она удерживала в красках то, что время склонно стирать: облик степных героев, звучание древних имён, достоинство народа, умеющего помнить себя.</p>
+<h3>Детство у Сырдарьи</h3>
+<p>Агимсалы Дузельханов родился 19 августа 1951 года в Казалинске — городе на берегу Сырдарьи, у самого края Приаральской степи. Его детство прошло там, где небо и земля сходятся у горизонта, где ветер несёт запах полыни и где каждый предмет быта хранит в себе память предков.</p>
+<p>Воспитывали его дедушка и бабушка. Бабушка — искусная мастерица — была его первым учителем красоты. Её руки ткали и шили всё, чем дышал дом: одеяла, ковры, убранство юрты. В орнаментах, которые рождались под её пальцами, жили символы, уходящие корнями в глубь тысячелетий. Маленький Агимсалы наблюдал — и впитывал. Не знал ещё, что этот первый урок останется с ним навсегда.</p>
+<p>Любовь к красоте пришла к нему не из книг — она вошла в него вместе с воздухом родного дома, вместе с ритмом орнамента и теплом ручного труда. Это был фундамент, на котором впоследствии выросло всё его творчество.</p>
+<h3>От степи — к большой школе</h3>
+<p>Природный дар требовал достойной огранки. В 1976 году Дузельханов окончил Алматинское художественное училище имени Н. В. Гоголя, а в 1982-м — Московский государственный художественный институт имени В. И. Сурикова, один из самых авторитетных художественных институтов страны.</p>
+<p>Годы в Москве дали ему то, чего не даёт даже самый щедрый природный дар: строгость академического рисунка, глубину композиционного мышления, умение создавать монументальные многофигурные полотна. Но вся эта выучка была лишь средством — не целью. Овладев высочайшим мастерством, художник вернулся туда, откуда вышел: к степи, к её истории, к её людям. Профессионализм стал его языком. Родина — его темой.</p>
+<h3>История, рассказанная кистью</h3>
+<p>Главным призванием Агимсалы Дузельханова стала историческая живопись. Томирис и Золотой человек саков, Огуз-хан и Культегин, Абылай-хан и Чингисхан — великая галерея правителей, воинов и героев степной цивилизации обрела новую художественную жизнь в его полотнах.</p>
+<p>Он работал с точностью историка и страстью художника. Каждая деталь — доспехи, конская сбруя, форма и орнамент саукеле, рукоять меча — проверялась по источникам, воссоздавалась с музейной тщательностью. Эта верность правде не сковывала его, а освобождала: зритель чувствовал, что перед ним не фантазия на тему прошлого, а живое свидетельство о нём.</p>
+<p>На его картинах степь никогда не бывает просто декорацией. Она дышит, в ней слышен голос ветра, ощущается бесконечность пространства. Она — равноправный герой его полотен.</p>
+<h3>Лирика и эпос — две руки одного мастера</h3>
+<p>Рядом с историческими полотнами в творчестве художника всегда жила иная, лирическая струна. «Весна», «Наурыз», «Невеста», «Кыз-Жибек», «Айман-Шолпан», «Колыбельная» — эти работы открывают другое измерение народной жизни: нежность материнства, красоту праздника, таинство обряда.</p>
+<p>Для Дузельханова это не было противоречием. Героическое и лирическое — две неразрывные стороны единой судьбы народа. Мужество воина неотделимо от тепла, ради которого он стоит на рубеже. История немыслима без повседневной красоты, которую она бережёт.</p>
+<p>Особое место в его наследии занимает цикл «Шёлковый путь» — посвящение Туркестану и древним дорогам, связывавшим цивилизации. В этих работах степь предстаёт не окраиной мира, но его сердцевиной.</p>
+<h3>Искусство в руках каждого</h3>
+<p>С обретением Казахстаном независимости Агимсалы Дузельханову была доверена особая честь: стать одним из создателей художественного образа первой национальной валюты страны — тенге. Он участвовал в разработке банкнот и стал автором академических портретов выдающихся исторических личностей, запечатлённых на них.</p>
+<p>Эта работа требовала предельной точности: тончайшее перо, увеличительная лупа, нить за нитью — образ, достойный эпохи. Международные эксперты признали эти портреты образцом графического мастерства. Немногим художникам выпадает такая судьба — увидеть своё искусство в руках миллионов. Образы, созданные Дузельхановым для тенге, стали частью визуальной памяти независимого Казахстана.</p>
+<p>Столь же значительным был его вклад в книжную культуру: более трёхсот оформленных изданий, в том числе учебники и произведения народного эпоса. Несколько поколений детей впервые увидели образы казахских героев именно через его рисунки — и тем самым прикоснулись к своей истории.</p>
+<h3>Человек</h3>
+<p>Те, кому выпало знать Агимсалы Дузельханова, вспоминают одно: при всей масштабности дарования он оставался человеком простым и открытым. Государственные награды и международное признание не изменили в нём ни интонации, ни отношения к людям. В мастерской он был терпелив и щедр — объяснял, делился, никогда не держал знание при себе. Дома был тем же: внимательным мужем, любящим отцом, любимым дедушкой.</p>
+<p>Тепло, которое зритель ощущает в его картинах, не было художественным приёмом. Это было просто его естество — то, чем он жил и что не мог не переносить на холст.</p>
+<h3>Память, которая остаётся</h3>
+<p>Жизнь Агимсалы Дузельханова совпала с эпохой, когда Казахстан заново обретал своё историческое лицо. Его творчество стало неотъемлемой частью этого пути — не иллюстрацией к нему, но живым его воплощением.</p>
+<p>Среди знаков прижизненного признания — звание Заслуженного деятеля искусств Республики Казахстан, Лауреат Государственной премии, орден «Құрмет», место в числе 33 лучших художников мира на конкурсе «Global Art 2000» в Нью-Йорке, работы в президентских резиденциях Казахстана и Туркменистана, в музейных собраниях многих стран мира.</p>
+<p>Но истинная награда художника — иного рода. Созданные им образы давно перестали принадлежать только полотнам. Они вошли в культурную память народа — туда, откуда их уже не изъять.</p>
+<p class="epi">Агимсалы Дузельханов ушёл из жизни в 2025 году.<br>Осталась его степь — та, которую он сохранил в красках и завещал будущим поколениям.<br>И всё началось с узора в руках бабушки — в тихой юрте у берегов Сырдарьи.</p>`,
+ kz:`<p class="ded">Суретші Ағымсалы Дүзелхановтың мәңгі жарқын есіміне арналады</p>
+<p class="lead">Дәуірді безендіретін суретшілер және оны сақтайтындар болады. Ағымсалы Дүзелханов соңғылардың қатарына жатты. Оның қылқаламы тек шығармашылық құрал ғана емес — ол куәгер де, сақтаушы да болды. Уақыт өшіруге бейім нәрсені: дала батырларының бейнесін, ежелгі есімдердің үнін, өзін есте ұстай білетін халықтың ар-намысын сол бояуда ұстап қалды.</p>
+<h3>Сырдария жағасындағы балалық шақ</h3>
+<p>Ағымсалы Дүзелханов 1951 жылғы 19 тамызда Қазалы қаласында — Сырдарияның оң жағалауында, Арал маңының жүрегінде дүниеге келген. Оның балалық шағы аспан мен жердің ұштасқан жерінде, жел жусан иісін аңқытқан, тұрмыстың әр заты бабалар жадын бойына сіңірген жерлерде өтті.</p>
+<p>Суретшіні атасы мен әжесі тәрбиеледі. Шебер қолөнерші әжесі оның сұлулық жолындағы алғашқы ұстазы болды. Оның қолдары үйдің тіршілігін құрады: жылы көрпелер, кілемдер, киіз үйдің безендірмелері. Саусақтарынан туған өрнектерде мыңдаған жылдар тереңіне тамыр жайған рәміздер жасырынып жатты. Кішкентай Ағымсалы бұны тамашалап, бойына сіңірді. Бұл алғашқы сабақтың мәңгіге жанында қалатынын ол әлі білмейтін еді.</p>
+<p>Сұлулыққа деген махаббат оған кітаптардан келген жоқ, ол туған үйдің ауасымен бірге, өрнектің ырғағымен және қол еңбегінің жылуымен бірге бойына сіңді. Кейіннен барлық шығармашылығы осы іргетасқа бекіді.</p>
+<h3>Даладан — ұлы мектепке</h3>
+<p>Табиғи дарын лайықты шыңдалуды қажет етті. 1976 жылы Дүзелханов Н. В. Гоголь атындағы Алматы көркем-өнер училищесін бітірді, ал 1982 жылы елдің ең беделді жоғары оқу орындарының бірі, В. И. Суриков атындағы Мәскеу мемлекеттік көркем-өнер институтында оқу тәмамдады.</p>
+<p>Мәскеудегі жылдар оған табиғи дарынның өзі бере алмайтын нәрсені үйретті: академиялық сурет қатаңдық, композициялық ойлау тереңдігі және монументалды көп бейнелі туындылар жасай білу шеберлігі. Алайда бұл тәлім мақсат емес, тек құрал болды. Ең жоғары шеберлікті меңгерген суретші өзі шыққан жеріне оралды: далаға, тарихына және оның халқына. Кәсіпқойлық оның тіліне айналды. Отаны — суреттерінің тақырыбына.</p>
+<h3>Қылқаламмен баяндалған тарих</h3>
+<p>Тарихи кескіндеме Ағымсалы Дүзелхановтың басты өнер арнасына айналды. Томирис пен сақтардың Алтын адамы, Оғыз хан мен Күлтегін, Абылай хан мен Шыңғыс хан — дала өркениетінің ұлы билеушілері, жауынгерлері мен батырларының кең галереясы туындыларында жаңа көркемдік өмір тапты.</p>
+<p>Ол тарихшының дәлдігімен және суретшінің ынтасымен еңбек етті. Әрбір сауыт-сайман, ат әбзелдер, сәукеленің пішіні мен өрнегі, қылыш сабы дереккөздермен салыстырылып, мұражай мұқияттылығымен қалпына келтірілді. Шындыққа бұл адалдық оны шектемеді, керісінше азат етті: көрермен алдында өткеннің қиялы емес, оның тірі куәлігі тұрғанын сезеді.</p>
+<p>Дүзелхановтың суреттерінде дала ешқашан тек көркем безендіру болмаған. Оның тыныс алып жатқаның, онда желдің дауысы естіліп, кеңістіктің шексіздігі сезілген. Дала — оның туындыларының тең дәрежелі кейіпкері.</p>
+<h3>Лирика мен эпос — бір шебердің екі қолы</h3>
+<p>Суретшінің шығармашылығында тарихи туындылармен қатар әрдайым өзгеше, лирикалық арна ағып жатты. «Көктем», «Наурыз», «Қалыңдық», «Қыз Жібек», «Айман-Шолпан», «Бесік жыры» туындылары халық өмірінің басқа өлшемін ашады: аналық нәзіктігін, мереке сұлулығын және рәсімнің киелілігін.</p>
+<p>Дүзелханов үшін бұл қайшылық болмады. Ерлік пен лирика халықтың тұтас тағдырының бірін-бірі толықтыратын екі жағы. Жауынгердің ерлігі оның қорғап тұрған жылуынан, аман сақтауға ант еткен мейірімінен ажырамайды. Тарих та күнделікті өмірдің қарапайым сұлулығынсыз мәнсіз, өйткені ол дәл сол сұлулықты қорғап, келер ұрпаққа жеткізеді.</p>
+<p>Оның мұрасында «Жібек жолы» циклі ерекше орын алады. Бұл цикл Түркістанға және өркениеттерді жалғастырған ежелгі жолдарға арналған туындылар. Бұл жұмыстарда дала әлемнің шеті емес, оның жүрегі ретінде көрінеді.</p>
+<h3>Өнер — әркімнің қолында</h3>
+<p>Қазақстан тәуелсіздігін алғаннан кейін Ағымсалы Дүзелхановқа ерекше құрмет көрсетілді: елдің тұңғыш ұлттық валютасы — теңгенің көркемдік бейнесін жасаушылардың бірі болу. Ол банкноттарды әзірлеуге қатысып, оларға таңбаланған көрнекті тарихи тұлғалардың академиялық портреттерін жасаудың авторы атанды.</p>
+<p>Бұл жұмыс асқан дәлдікті талап етті: ең жіңішке қылқалам, үлкейткіш әйнек, сызық сызықтан дәуірге лайықты бейне. Халықаралық сарапшылар бұл портреттерді графикалық шеберліктің озық үлгісі ретінде мойындады. Өз өнерінің миллиондаған адамның қолына жеткенін көру – кез келген суретшіге бұйыра бермейтін тағдыр. Дүзелхановтың теңге үшін жасаған бейнелері тәуелсіз Қазақстанның көркем жадының ажырамас бөлігіне айналды.</p>
+<p>Оның кітап мәдениетіне қосқан үлесі де айрықша болды: 300 астам басылымды безендіріп, олардың қатарында оқулықтар мен халық эпосының жауһар туындылары да бар. Қазақ батырларының бейнесін бірнеше буын бала алғаш рет дәл оның суреттері арқылы танып, сол арқылы өз халқының тарихына жақындай түсті.</p>
+<h3>Тұлға</h3>
+<p>Ағымсалы Дүзелхановты жақыннан таныған жандар оның бойындағы бір қасиетті ерекше еске алады: дарынының ауқымына қарамастан, ол қарапайым да ашық мінезді адам болып қала білді. Мемлекеттік марапаттар мен халықаралық мойындаулар оның болмысын өзгерткен жоқ — адамдармен сөйлесу мәнері де, оларға деген ықыласы да сол қалпында қалды. Шеберханада ол сабырлы әрі жомарт ұстаз еді: білгенін үйретіп, тәжірибесімен бөлісетін, білімін ешқашан өзімен ғана шектемейтін. Отбасында да дәл сондай жан болды — қамқор жар, ардақты әке, немерелерінің сүйікті атасы.</p>
+<p>Көрермен оның туындыларынан сезінетін жылылық көркемдік тәсілден туған әсер емес еді. Ол — суретшінің өз болмысы, оның өмір сүру дағдысы, кенепке еріксіз дарып отыратын жан жылуы болатын.</p>
+<h3>Халық жадындағы мұра</h3>
+<p>Ағымсалы Дүзелхановтың ғұмыры Қазақстанның өз тарихи келбетін қайта танып, жаңаша түлеу дәуірімен тұспа-тұс келді. Оның шығармашылығы сол жолдың ажырамас бөлігіне айналды. Бұл тек сол кезеңнің көркем шежіресі емес, оның тірі бейнесі, рухани көрінісі еді.</p>
+<p>Көзі тірісінде көрсетілген құрметтің қатарында Қазақстан Республикасының еңбек сіңірген өнер қайраткері атағы, Мемлекеттік сыйлықтың лауреаты атануы, «Құрмет» орденімен марапатталуы және Нью-Йоркте өткен «Global Art 2000» байқауында әлемнің ең үздік 33 суретшісінің қатарына енуі бар. Оның туындылары Қазақстан мен Түрікменстан президенттік резиденцияларында, сондай-ақ әлемнің көптеген елдерінің мұражай қорларында сақтаулы.</p>
+<p>Алайда суретші үшін ең үлкен марапаттың мәні өзгеде. Ол жасаған бейнелер әлдеқашан кенеп шеңберінен асып түсті. Олар халықтың мәдени санасынан орын алып, енді ешқашан өшпестей болып ұлттық сананың бір бөлшегіне айналды.</p>
+<p class="epi">Ағымсалы Дүзелханов 2025 жылы өмірден өтті.<br>Бірақ оның мәңгілікке қалдырған даласы қалды — қылқаламмен бедерлеп, келер ұрпаққа аманат еткен ұлы даласы.<br>Ал сол ұлы жолдың бастауы Сырдария жағасындағы тынық киіз үйде, әжесінің қолындағы өрнектен басталған еді.</p>`,
+ en:`<p class="ded">In memoriam: Agimsaly Duzelkhanov, Artist</p>
+<p class="lead">There are artists who adorn an era. And there are those who preserve it. Agimsaly Duzelkhanov belonged to the latter. His brush was not merely an instrument of creation — it was a witness and a guardian. It held in pigment what time is inclined to efface: the countenances of steppe heroes, the cadences of ancient names, the dignity of a people who know how to remember themselves.</p>
+<h3>Childhood on the Syr Darya</h3>
+<p>Agimsaly Duzelkhanov was born on 19 August 1951 in Kazalinsk — a city on the banks of the Syr Darya, at the very edge of the Aral steppe. His childhood unfolded in a landscape where sky and earth converge at the horizon, where the wind carries the scent of wormwood, and where every domestic object bears within it the memory of ancestors.</p>
+<p>He was raised by his grandparents. His grandmother — a gifted craftswoman — was his first teacher of beauty. Her hands wove and stitched everything that gave the household its breath: quilts, carpets, the adornments of the yurt. Within the ornaments that emerged beneath her fingers lived symbols rooted in millennia of tradition. The young Agimsaly observed — and absorbed. He did not yet know that this first lesson would remain with him for the rest of his life.</p>
+<p>His love of beauty did not come from books — it entered him together with the air of his native home, with the rhythm of ornament and the warmth of handcraft. This was the foundation upon which all his subsequent work would be built.</p>
+<h3>From the Steppe to the Academy</h3>
+<p>Natural talent required worthy cultivation. In 1976, Duzelkhanov graduated from the Almaty Art College named after N. V. Gogol, and in 1982 from the Moscow State Academic Art Institute named after V. I. Surikov — one of the most prestigious institutions of artistic education in the country.</p>
+<p>His years in Moscow gave him what even the most generous natural gift cannot: the rigour of academic draughtsmanship, the depth of compositional thought, and the capacity to create monumental multi-figure canvases. Yet all this training was a means, not an end. Having attained the highest level of professional mastery, the artist returned to the place from which he had come — to the steppe, its history, its people. Craftsmanship became his language. His homeland became his subject.</p>
+<h3>History Told by a Brush</h3>
+<p>The principal vocation of Agimsaly Duzelkhanov was historical painting. Tomyris and the Golden Man of the Saka, Oghuz Khan and Kul-Tegin, Ablai Khan and Genghis Khan — a great gallery of rulers, warriors, and heroes of steppe civilisation found new artistic life in his canvases.</p>
+<p>He worked with the precision of a historian and the ardour of an artist. Every detail — armour, horse trappings, the form and ornamentation of the saukéle, the hilt of a sword — was verified against primary sources and recreated with the scrupulousness of a museum conservator. This fidelity to truth did not constrain him; it liberated him. The viewer sensed that what stood before them was not a fantasy upon the theme of the past, but a living testimony to it.</p>
+<p>In his paintings, the steppe is never merely a backdrop. It breathes; in it one hears the voice of the wind, one feels the boundlessness of space. It is an equal protagonist of his canvases.</p>
+<h3>Lyric and Epic — Two Hands of One Master</h3>
+<p>Alongside the historical canvases, a different, lyrical current always ran through the artist's work. Spring, Nauryz, The Bride, Kyz-Zhibek, Aiman-Sholpan, Lullaby — these works reveal another dimension of the life of the people: the tenderness of maternity, the beauty of celebration, the mystery of ritual.</p>
+<p>For Duzelkhanov, this was no contradiction. The heroic and the lyrical are two inseparable facets of a single national destiny. The courage of the warrior is indivisible from the warmth for which he stands at the frontier. History is inconceivable without the everyday beauty it preserves.</p>
+<p>A special place in his legacy is occupied by the cycle The Silk Road — a dedication to Turkestan and the ancient routes that connected civilisations. In these works, the steppe appears not as a periphery of the world, but as its very heart.</p>
+<h3>Art in the Hands of the Many</h3>
+<p>With the attainment of Kazakhstan's independence, Agimsaly Duzelkhanov was entrusted with a singular honour: to become one of the creators of the visual identity of the country's first national currency — the tenge. He participated in the design of the banknotes and was the author of the academic portraits of outstanding historical figures depicted upon them.</p>
+<p>This work demanded the utmost precision: the finest pen, a magnifying loupe, thread by thread — an image worthy of an epoch. International experts recognised these portraits as a benchmark of graphic mastery. Few artists are granted such a fate — to see their art pass through the hands of millions. The images created by Duzelkhanov for the tenge became part of the visual memory of independent Kazakhstan.</p>
+<p>Equally significant was his contribution to book culture: more than three hundred illustrated publications, including textbooks and works of national epic. Several generations of children first encountered the figures of Kazakh heroes through his drawings — and thereby touched their own history.</p>
+<h3>The Man</h3>
+<p>Those who had the fortune to know Agimsaly Duzelkhanov recall one thing above all: despite the magnitude of his gift, he remained a person of simplicity and openness. State honours and international recognition altered neither his tone nor his manner with people. In the studio he was patient and generous — he explained, he shared, he never kept knowledge to himself. At home he was the same: a devoted husband, a loving father, a cherished grandfather.</p>
+<p>The warmth that a viewer senses in his paintings was not an artistic device. It was simply his nature — the substance of how he lived, which he could not help but transfer to the canvas.</p>
+<h3>A Memory That Endures</h3>
+<p>The life of Agimsaly Duzelkhanov coincided with an era in which Kazakhstan was reclaiming its historical identity. His work became an inseparable part of that journey — not an illustration of it, but its living embodiment.</p>
+<p>Among the marks of recognition accorded to him during his lifetime: the title of Honoured Figure of the Arts of the Republic of Kazakhstan; State Prize Laureate; the Order of Kurmet; a place among the 33 finest artists in the world at the Global Art 2000 competition in New York; works held in the presidential residences of Kazakhstan and Turkmenistan; and paintings in museum collections across many countries.</p>
+<p>Yet the true reward of the artist is of a different order. The images he created have long since ceased to belong solely to their canvases. They have entered the cultural memory of the people — a place from which they can no longer be removed.</p>
+<p class="epi">Agimsaly Duzelkhanov passed away in 2025.<br>His steppe remains — the one he preserved in pigment and bequeathed to future generations.<br>And it all began with a pattern in a grandmother's hands — in a quiet yurt on the banks of the Syr Darya.</p>`
+};
+
+function applyLang(){
+  document.documentElement.lang=LANG;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const v=I18N[LANG][el.getAttribute('data-i18n')]; if(v!=null) el.innerHTML=v;
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
+    const v=I18N[LANG][el.getAttribute('data-i18n-ph')]; if(v!=null) el.placeholder=v;
+  });
+  const eb=document.getElementById('essayBody'); if(eb) eb.innerHTML=ESSAY[LANG]||ESSAY.ru;
+  renderGallery();
+}
+
+/* ── EVENTS ── */
+document.getElementById('lang').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-lang]'); if(!b) return;
+  document.querySelectorAll('#lang button').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active'); LANG=b.dataset.lang; applyLang();
+});
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-f]'); if(!b) return;
+  document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active'); FILTER=b.dataset.f; renderGallery();
+});
+document.getElementById('viewtabs').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-v]'); if(!b) return;
+  document.querySelectorAll('#viewtabs button').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active'); VIEW=b.dataset.v; renderGallery();
+});
+
+/* ── LIGHTBOX (просмотр с зумом) ── */
+const LB={idx:0,zoom:1,px:0,py:0,drag:false,sx:0,sy:0};
+const lbEl=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg'),lbStage=document.getElementById('lbStage');
+function lbApply(){lbImg.style.transform=`translate(${LB.px}px,${LB.py}px) scale(${LB.zoom})`;lbStage.style.cursor=LB.zoom>1?'grab':'zoom-in'}
+function lbShow(){const w=WORKS[LB.idx];LB.zoom=1;LB.px=0;LB.py=0;lbImg.src=w.img;lbImg.alt=w.t[LANG];
+  document.getElementById('lbTitle').textContent=w.t[LANG];
+  document.getElementById('lbDetail').textContent=w.d[LANG];
+  document.getElementById('lbCycle').textContent=CYCLES[w.c][LANG];lbApply()}
+function lbOpen(i){LB.idx=i;lbShow();lbEl.classList.add('on');document.documentElement.style.overflow='hidden'}
+function lbClose(){lbEl.classList.remove('on');document.documentElement.style.overflow=''}
+function lbNav(d){LB.idx=(LB.idx+d+WORKS.length)%WORKS.length;lbShow()}
+document.getElementById('gallery').addEventListener('click',e=>{
+  const a=e.target.closest('.art');if(!a)return;
+  lbOpen(+a.dataset.idx);
+});
+document.getElementById('lbClose').addEventListener('click',lbClose);
+document.getElementById('lbPrev').addEventListener('click',e=>{e.stopPropagation();lbNav(-1)});
+document.getElementById('lbNext').addEventListener('click',e=>{e.stopPropagation();lbNav(1)});
+lbEl.addEventListener('click',e=>{if(e.target===lbEl)lbClose()});
+lbStage.addEventListener('click',e=>{e.stopPropagation();if(LB.drag)return;LB.zoom=LB.zoom>1?1:2.6;LB.px=0;LB.py=0;lbApply()});
+lbStage.addEventListener('wheel',e=>{e.preventDefault();LB.zoom=Math.min(4,Math.max(1,LB.zoom+(e.deltaY<0?0.25:-0.25)));if(LB.zoom===1){LB.px=0;LB.py=0}lbApply()},{passive:false});
+lbStage.addEventListener('mousedown',e=>{if(LB.zoom<=1)return;LB.drag=true;LB.sx=e.clientX-LB.px;LB.sy=e.clientY-LB.py;lbStage.style.cursor='grabbing';e.preventDefault()});
+addEventListener('mousemove',e=>{if(!LB.drag)return;LB.px=e.clientX-LB.sx;LB.py=e.clientY-LB.sy;lbApply()});
+addEventListener('mouseup',()=>{if(LB.drag){LB.drag=false;setTimeout(()=>LB.drag=false,0);lbApply()}});
+addEventListener('keydown',e=>{if(!lbEl.classList.contains('on'))return;if(e.key==='Escape')lbClose();else if(e.key==='ArrowRight')lbNav(1);else if(e.key==='ArrowLeft')lbNav(-1)});
+
+/* ── ЗАЩИТА изображений (деттерент) ── */
+document.addEventListener('contextmenu',e=>{if(e.target.closest('img,.art,.lb-stage,.hero-frame'))e.preventDefault()});
+document.addEventListener('dragstart',e=>{if(e.target.tagName==='IMG')e.preventDefault()});
+document.getElementById('theme').addEventListener('click',()=>{
+  const r=document.documentElement;
+  r.dataset.theme = r.dataset.theme==='dark'?'light':'dark';
+});
+/* ── МОБИЛЬНОЕ МЕНЮ (бургер) ── */
+const burger=document.getElementById('burger');
+const mobileMenu=document.getElementById('mobileMenu');
+const menuBackdrop=document.getElementById('menuBackdrop');
+function setMenu(open){
+  burger.classList.toggle('open',open);
+  mobileMenu.classList.toggle('open',open);
+  menuBackdrop.classList.toggle('open',open);
+  burger.setAttribute('aria-expanded',open?'true':'false');
+  document.documentElement.style.overflow=open?'hidden':'';
+}
+if(burger){
+  burger.addEventListener('click',()=>setMenu(!mobileMenu.classList.contains('open')));
+  menuBackdrop.addEventListener('click',()=>setMenu(false));
+  mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&mobileMenu.classList.contains('open'))setMenu(false);});
+}
+/* ── SCROLL FX: тень навбара + параллакс hero ── */
+const navEl=document.getElementById('nav');
+const heroBg=document.querySelector('.hero-bg');
+function onScrollFx(){
+  const y=window.scrollY||window.pageYOffset;
+  navEl.classList.toggle('scrolled',y>40);
+  if(heroBg&&y<window.innerHeight){heroBg.style.transform='translate3d(0,'+Math.min(y*0.18,150)+'px,0)';}
+}
+window.addEventListener('scroll',onScrollFx,{passive:true});
+
+/* ── LENIS: плавная инерционная прокрутка (с уважением к prefers-reduced-motion) ── */
+const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!REDUCE && window.Lenis){
+  const lenis=new Lenis({lerp:0.09,wheelMultiplier:1,smoothWheel:true});
+  function raf(t){lenis.raf(t);requestAnimationFrame(raf);}
+  requestAnimationFrame(raf);
+  lenis.on('scroll',onScrollFx);
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const id=a.getAttribute('href');
+      if(id.length>1){const el=document.querySelector(id);if(el){e.preventDefault();lenis.scrollTo(el,{offset:-8});}}
+    });
+  });
+}
+onScrollFx();
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+window.__io=io;
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.getElementById('yr').textContent=new Date().getFullYear();
+const bioMore=document.getElementById('bioMore');
+if(bioMore)bioMore.addEventListener('click',()=>{document.getElementById('bioExtra').classList.add('open');bioMore.style.display='none'});
+applyLang();
+</script>
+</body>
+</html>
