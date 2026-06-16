@@ -157,19 +157,20 @@ function lookup(name) {
 // (а не одной подписью в углу), поэтому его нельзя обрезать и видно всегда.
 // Сохраняется при скачивании файла (в отличие от CSS-наложения в лайтбоксе).
 function watermark(w, h) {
-  const fs = Math.max(13, Math.round(w / 54));
+  const fs = Math.max(13, Math.round(w / 50));
   const text = '©  Ағымсалы Дүзелханов';
-  const stepX = Math.round(w * 0.56);
-  const stepY = Math.round(fs * 7.5);
-  const sw = Math.max(0.4, fs / 36);
+  const stepX = Math.round(w * 0.5);
+  const stepY = Math.round(fs * 6.5);
+  const sw = Math.max(0.5, fs / 22);
   let tiles = '';
   let row = 0;
   for (let y = -Math.round(h * 0.1); y < h + stepY; y += stepY) {
     const offset = (row % 2) * Math.round(stepX / 2);
     for (let x = -Math.round(w * 0.1) + offset; x < w + stepX; x += stepX) {
+      // мягкий серый контур + белая заливка — читается и на светлой графике, и на тёмных работах, но не выглядит чёрным
       tiles += `<text x="${x}" y="${y}" transform="rotate(-30 ${x} ${y})" `
         + `font-family="Georgia,'Times New Roman',serif" font-size="${fs}" `
-        + `fill="#ffffff" fill-opacity="0.15" stroke="#000000" stroke-opacity="0.05" `
+        + `fill="#ffffff" fill-opacity="0.30" stroke="#2a2a2a" stroke-opacity="0.14" `
         + `stroke-width="${sw}" paint-order="stroke">${text}</text>`;
     }
     row++;
@@ -190,7 +191,7 @@ for (const g of groups) {
     let ar = 1; // пропорция изображения (ширина/высота) — для резервирования места в галерее
     try {
       const base = await sharp(path.join(dir, f), { limitInputPixels: false }).rotate()
-        .resize({ width: 1700, height: 1700, fit: 'inside', withoutEnlargement: true })
+        .resize({ width: 1000, height: 1000, fit: 'inside', withoutEnlargement: true })
         .toBuffer();
       const m = await sharp(base).metadata();
       ar = m.width / m.height;
@@ -201,7 +202,7 @@ for (const g of groups) {
       writeFileSync(path.join(OUT, out), full);
       // миниатюра для сетки галереи (водяной знак масштабируется вместе с картинкой)
       await sharp(full)
-        .resize({ width: 820, withoutEnlargement: true })
+        .resize({ width: 480, withoutEnlargement: true })
         .jpeg({ quality: 74, progressive: true, mozjpeg: true })
         .toFile(path.join(THUMB, out));
     } catch (e) { console.log('ERR', f, e.message); continue; }
