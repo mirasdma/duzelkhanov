@@ -534,10 +534,14 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:70px 0 40px
       <h2 data-i18n="ct_title">Связаться с художником</h2>
       <p data-i18n="ct_text">Для музеев, галерей, кураторов и исследователей. Напишите — и мы ответим в ближайшее время.</p>
     </div>
-    <form class="form reveal" onsubmit="event.preventDefault();this.querySelector('button').textContent='✓ '+(I18N[LANG].ct_sent);">
-      <input type="text" placeholder="Имя" data-i18n-ph="ct_name" required />
-      <input type="email" placeholder="E-mail" data-i18n-ph="ct_email" required />
-      <textarea placeholder="Сообщение" data-i18n-ph="ct_msg"></textarea>
+    <form class="form reveal" id="contactForm">
+      <input type="hidden" name="access_key" value="a263c793-e30a-4477-b45d-e05cccf6223c">
+      <input type="hidden" name="subject" value="Сообщение с сайта duzelkhanov.com">
+      <input type="hidden" name="from_name" value="Сайт памяти А. Дузельханова">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="text" name="name" placeholder="Имя" data-i18n-ph="ct_name" required />
+      <input type="email" name="email" placeholder="E-mail" data-i18n-ph="ct_email" required />
+      <textarea name="message" placeholder="Сообщение" data-i18n-ph="ct_msg" required></textarea>
       <button type="submit" class="btn btn-primary" data-i18n="ct_send">Отправить</button>
     </form>
   </div>
@@ -722,7 +726,7 @@ const I18N={
   aw_eyebrow:"Признание",aw_title:"Звания и награды",aw1_t:"Государственная премия РК",aw1_p:"За серию исторических полотен о Казахстане.",aw2_t:"Орден «Құрмет»",aw2_p:"За значительный вклад в развитие изобразительного искусства Казахстана.",aw3_t:"Заслуженный деятель искусств РК",aw3_p:"Указом Президента Республики Казахстан.",aw4_t:"«Глобал Арт-2000»",aw4_p:"В числе 33 лучших художников из более чем 100 стран (ООН, Нью-Йорк).",aw5_t:"Премии Абая и Алишера Навои",aw5_p:"А также премия «Лучшая книга» (Ташкент) и всесоюзные дипломы 1985–1987 годов.",aw6_t:"Работы в резиденциях президентов",aw6_p:"Казахстан (Алматы, Астана) и Туркменистан (Ашхабад).",
   ex_eyebrow:"Хроника",ex_title:"Выставки и проекты",ex1_t:"Global ART 2000",ex1_p:"США · проект под эгидой ООН",ex2_t:"Персональные выставки",ex2_p:"Алматы · Астана · Казахстан",ex3_t:"Резиденции глав государств",ex3_p:"Казахстан · Туркменистан",ex_int:"Международная",ex_solo:"Персональная",ex_coll:"Собрание",
   pr_eyebrow:"О художнике пишут",pr_title:"Пресса и публикации",pr1_s:"Национальный банк РК",pr1_t:"Как создавался дизайн первого тенге",pr2_s:"Академия им. Жургенова",pr2_t:"Профессор, воспитавший поколения художников",pr3_s:"Art Nomad",pr3_t:"Мастер исторического жанра Казахстана",
-  ct_eyebrow:"Связь",ct_title:"Связаться с семьёй художника",ct_text:"По вопросам выставок, публикаций и наследия — для музеев, галерей, кураторов и исследователей. Напишите, и мы ответим.",ct_name:"Имя",ct_email:"E-mail",ct_msg:"Сообщение",ct_send:"Отправить",ct_sent:"Отправлено",
+  ct_eyebrow:"Связь",ct_title:"Связаться с семьёй художника",ct_text:"По вопросам выставок, публикаций и наследия — для музеев, галерей, кураторов и исследователей. Напишите, и мы ответим.",ct_name:"Имя",ct_email:"E-mail",ct_msg:"Сообщение",ct_send:"Отправить",ct_sent:"Отправлено",ct_err:"Ошибка — попробуйте ещё раз",
   foot_tag:"Живопись, графика и иллюстрация, посвящённые истории и культуре Казахстана.",foot_explore:"Разделы",foot_more:"Ещё",foot_contact:"Контакты",foot_made:"Все права защищены. Изображения работ — собственность семьи художника."},
 
  kz:{brand_name:"Дүзелханов",brand_sub:"Суретші · 1951–2025",nav_works:"Жұмыстар",nav_tenge:"Теңге суретшісі",nav_bio:"Өмірбаян",nav_essay:"Эссе",nav_awards:"Марапаттар",nav_exh:"Көрмелер",nav_contact:"Байланыс",
@@ -739,7 +743,7 @@ const I18N={
   aw_eyebrow:"Мойындау",aw_title:"Атақтар мен марапаттар",aw1_t:"Қазақстан Республикасының Мемлекеттік сыйлығының лауреаты",aw1_p:"Қазақстан туралы тарихи кенептер сериясы үшін.",aw2_t:"«Құрмет» ордені",aw2_p:"Қазақстанның бейнелеу өнерін дамытуға қосқан елеулі үлесі үшін.",aw3_t:"ҚР еңбек сіңірген өнер қайраткері",aw3_p:"Қазақстан Республикасы Президентінің Жарлығымен.",aw4_t:"«Глобал Арт-2000»",aw4_p:"100-ден астам елдің ішінен 33 үздік суретшінің қатарында (БҰҰ, Нью-Йорк).",aw5_t:"Абай және Әлішер Науаи сыйлықтары",aw5_p:"Сондай-ақ «Үздік кітап» сыйлығы (Ташкент) және 1985–1987 жылдардағы бүкілодақтық дипломдар.",aw6_t:"Президент резиденцияларындағы жұмыстар",aw6_p:"Қазақстан (Алматы, Астана) және Түрікменстан (Ашхабад).",
   ex_eyebrow:"Шежіре",ex_title:"Көрмелер мен жобалар",ex1_t:"Global ART 2000",ex1_p:"АҚШ · БҰҰ аясындағы жоба",ex2_t:"Жеке көрмелер",ex2_p:"Алматы · Астана · Қазақстан",ex3_t:"Мемлекет басшыларының резиденциялары",ex3_p:"Қазақстан · Түрікменстан",ex_int:"Халықаралық",ex_solo:"Жеке",ex_coll:"Жинақ",
   pr_eyebrow:"Суретші туралы",pr_title:"БАҚ және басылымдар",pr1_s:"ҚР Ұлттық банкі",pr1_t:"Алғашқы теңге дизайны қалай жасалды",pr2_s:"Жүргенов академиясы",pr2_t:"Ұрпақ тәрбиелеген ұстаз-профессор",pr3_s:"Art Nomad",pr3_t:"Қазақстанның тарихи жанр шебері",
-  ct_eyebrow:"Байланыс",ct_title:"Суретшінің отбасымен байланысу",ct_text:"Көрмелер, басылымдар және мұра мәселелері бойынша — мұражайлар, галереялар мен зерттеушілерге. Жазыңыз, жауап береміз.",ct_name:"Аты",ct_email:"E-mail",ct_msg:"Хабарлама",ct_send:"Жіберу",ct_sent:"Жіберілді",
+  ct_eyebrow:"Байланыс",ct_title:"Суретшінің отбасымен байланысу",ct_text:"Көрмелер, басылымдар және мұра мәселелері бойынша — мұражайлар, галереялар мен зерттеушілерге. Жазыңыз, жауап береміз.",ct_name:"Аты",ct_email:"E-mail",ct_msg:"Хабарлама",ct_send:"Жіберу",ct_sent:"Жіберілді",ct_err:"Қате — қайталап көріңіз",
   foot_tag:"Қазақстан тарихы мен мәдениетіне арналған кескіндеме, график және иллюстрация.",foot_explore:"Бөлімдер",foot_more:"Тағы",foot_contact:"Байланыс",foot_made:"Барлық құқық қорғалған. Туындылардың суреттері — суретші отбасының меншігі."},
 
  en:{brand_name:"Duzelkhanov",brand_sub:"Artist · 1951–2025",nav_works:"Works",nav_tenge:"Artist of the Tenge",nav_bio:"Biography",nav_essay:"Essay",nav_awards:"Awards",nav_exh:"Exhibitions",nav_contact:"Contact",
@@ -756,7 +760,7 @@ const I18N={
   aw_eyebrow:"Recognition",aw_title:"Titles & awards",aw1_t:"State Prize of Kazakhstan",aw1_p:"For a series of historical canvases about Kazakhstan.",aw2_t:"Order of Kurmet",aw2_p:"For a significant contribution to the fine arts of Kazakhstan.",aw3_t:"Honoured Artist of Kazakhstan",aw3_p:"By decree of the President of the Republic of Kazakhstan.",aw4_t:"Global ART 2000",aw4_p:"Among the 33 best artists from over 100 countries (UN, New York).",aw5_t:"Abai & Alisher Navoi Prizes",aw5_p:"As well as the 'Best Book' prize (Tashkent) and all-Union diplomas of 1985–1987.",aw6_t:"Works in presidential residences",aw6_p:"Kazakhstan (Almaty, Astana) and Turkmenistan (Ashgabat).",
   ex_eyebrow:"Chronicle",ex_title:"Exhibitions & projects",ex1_t:"Global ART 2000",ex1_p:"USA · a UN-organised project",ex2_t:"Solo exhibitions",ex2_p:"Almaty · Astana · Kazakhstan",ex3_t:"Heads-of-state residences",ex3_p:"Kazakhstan · Turkmenistan",ex_int:"International",ex_solo:"Solo",ex_coll:"Collection",
   pr_eyebrow:"In the press",pr_title:"Press & publications",pr1_s:"National Bank of Kazakhstan",pr1_t:"How the first tenge was designed",pr2_s:"Zhurgenov Academy",pr2_t:"The professor who taught generations of artists",pr3_s:"Art Nomad",pr3_t:"A master of Kazakhstan's historical genre",
-  ct_eyebrow:"Contact",ct_title:"Contact the artist's family",ct_text:"For exhibitions, publications and legacy matters — for museums, galleries, curators and researchers. Write to us and we will respond.",ct_name:"Name",ct_email:"E-mail",ct_msg:"Message",ct_send:"Send",ct_sent:"Sent",
+  ct_eyebrow:"Contact",ct_title:"Contact the artist's family",ct_text:"For exhibitions, publications and legacy matters — for museums, galleries, curators and researchers. Write to us and we will respond.",ct_name:"Name",ct_email:"E-mail",ct_msg:"Message",ct_send:"Send",ct_sent:"Sent",ct_err:"Error — please try again",
   foot_tag:"Painting, graphics and illustration devoted to the history and culture of Kazakhstan.",foot_explore:"Sections",foot_more:"More",foot_contact:"Contact",foot_made:"All rights reserved. Images of the works are the property of the artist's family."}
 };
 
@@ -973,6 +977,30 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.getElementById('yr').textContent=new Date().getFullYear();
 const bioMore=document.getElementById('bioMore');
 if(bioMore)bioMore.addEventListener('click',()=>{document.getElementById('bioExtra').classList.add('open');bioMore.style.display='none'});
+
+/* ── ФОРМА ОБРАТНОЙ СВЯЗИ (Web3Forms — отправка без перезагрузки) ── */
+const contactForm=document.getElementById('contactForm');
+if(contactForm){
+  contactForm.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const btn=contactForm.querySelector('button[type="submit"]');
+    const original=I18N[LANG].ct_send;
+    btn.disabled=true; btn.textContent='…';
+    try{
+      const res=await fetch('https://api.web3forms.com/submit',{
+        method:'POST', headers:{'Accept':'application/json'}, body:new FormData(contactForm)
+      });
+      const data=await res.json();
+      if(data.success){
+        btn.textContent='✓ '+I18N[LANG].ct_sent; contactForm.reset();
+        setTimeout(()=>{btn.textContent=original; btn.disabled=false;},4000);
+      } else { throw new Error(data.message||'fail'); }
+    }catch(err){
+      btn.textContent=I18N[LANG].ct_err; btn.disabled=false;
+      setTimeout(()=>{btn.textContent=original;},4000);
+    }
+  });
+}
 applyLang();
 </script>
 </body>
