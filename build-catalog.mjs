@@ -13,6 +13,7 @@ const groups = [
   { dir: 'Масляные работы/для сайта',              tech: 'oil' },
   { dir: 'Графика акварель/для сайта',             tech: 'water' },
   { dir: 'Графика карандаш литография/для сайта',  tech: 'pencil' },
+  { dir: 'Литография/для сайта',                   tech: 'litho' },
   { dir: 'наброски/для сайта',                     tech: 'sketch' },
   { dir: 'Иллюстрации к детским книгам/для сайта',  tech: 'kids' },
 ];
@@ -22,6 +23,7 @@ const DLAB = {
   oil:    { ru: 'Холст, масло',       kz: 'Кенеп, май бояу',  en: 'Oil on canvas' },
   water:  { ru: 'Бумага, акварель',   kz: 'Қағаз, акварель',  en: 'Watercolour on paper' },
   pencil: { ru: 'Бумага, карандаш',   kz: 'Қағаз, қарындаш',  en: 'Pencil on paper' },
+  litho:  { ru: 'Бумага, литография', kz: 'Қағаз, литография', en: 'Lithograph on paper' },
   sketch: { ru: 'Бумага, карандаш',   kz: 'Қағаз, қарындаш',  en: 'Pencil on paper' },
   kids:   { ru: 'Книжная иллюстрация',kz: 'Кітап суреті',     en: 'Book illustration' },
 };
@@ -216,7 +218,7 @@ for (const g of groups) {
       if (m) {
         t = { ru: m.ru, kz: m.kz, en: m.en }; c = m.c;
       } else {                              // на всякий случай — общая подпись
-        const GEN = { oil:{ru:'Картина',kz:'Туынды',en:'Painting'}, water:{ru:'Графика',kz:'График',en:'Graphic work'}, pencil:{ru:'Графика',kz:'График',en:'Graphic work'} }[g.tech];
+        const GEN = { oil:{ru:'Картина',kz:'Туынды',en:'Painting'}, water:{ru:'Графика',kz:'График',en:'Graphic work'}, pencil:{ru:'Графика',kz:'График',en:'Graphic work'}, litho:{ru:'Литография',kz:'Литография',en:'Lithograph'} }[g.tech];
         t = { ...GEN }; c = 'misc';
         console.log('NO MATCH:', g.tech, '←', f);
       }
