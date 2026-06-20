@@ -162,6 +162,15 @@ a{color:inherit;text-decoration:none}
 .filters button:hover{border-color:var(--gold);color:var(--text);box-shadow:0 0 0 3px rgba(201,162,75,.13);transform:translateY(-1px)}
 .filters button.active{border-color:var(--gold);color:var(--gold)}
 .gallery{column-count:3;column-gap:30px}
+/* ── ФОТОАРХИВ ── */
+.photo-grid{column-count:3;column-gap:18px}
+.photo-item{break-inside:avoid;margin:0 0 18px;cursor:pointer;overflow:hidden;background:var(--surface);border:1px solid var(--line)}
+.photo-item img{width:100%;display:block;transition:transform 1.1s var(--ease)}
+.photo-item:hover img{transform:scale(1.045)}
+.photo-lb{position:fixed;inset:0;z-index:200;background:rgba(8,7,5,.96);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+.photo-lb.on{opacity:1;visibility:visible}
+.plb-stage{display:flex;align-items:center;justify-content:center;max-width:92vw;max-height:88vh}
+.plb-stage img{max-width:92vw;max-height:88vh;display:block;box-shadow:var(--shadow)}
 .art{break-inside:avoid;margin:0 0 42px;cursor:pointer}
 .art-pic{position:relative;overflow:hidden;background:var(--bg-2)}
 .art-pic img{width:100%;display:block;transition:transform 1.2s var(--ease)}
@@ -344,6 +353,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:70px 0 40px
   .hero-frame{justify-self:start;width:100%;max-width:320px;margin-top:6px}
   .tenge .inner,.contact .inner{grid-template-columns:1fr;gap:46px}
   .gallery{column-count:2}
+  .photo-grid{column-count:2}
   .press-grid{grid-template-columns:repeat(2,1fr)}
   .stats .grid{grid-template-columns:repeat(2,1fr)}
   .stat:nth-child(2){border-right:none}
@@ -382,6 +392,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:70px 0 40px
       <a href="#tenge" data-i18n="nav_tenge">Художник тенге</a>
       <a href="#bio" data-i18n="nav_bio">Биография</a>
       <a href="#essay" data-i18n="nav_essay">Эссе</a>
+      <a href="#photos" data-i18n="nav_photos">Фотоархив</a>
       <a href="#awards" data-i18n="nav_awards">Награды</a>
       <a href="#contact" data-i18n="nav_contact">Контакты</a>
     </div>
@@ -404,6 +415,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:70px 0 40px
   <a href="#tenge" data-i18n="nav_tenge">Художник тенге</a>
   <a href="#bio" data-i18n="nav_bio">Биография</a>
   <a href="#essay" data-i18n="nav_essay">Эссе</a>
+  <a href="#photos" data-i18n="nav_photos">Фотоархив</a>
   <a href="#awards" data-i18n="nav_awards">Награды</a>
   <a href="#contact" data-i18n="nav_contact">Контакты</a>
 </aside>
@@ -529,6 +541,17 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:70px 0 40px
   </div>
 </section>
 
+<!-- PHOTO ARCHIVE -->
+<section class="section" id="photos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="photos_eyebrow">Архив</span>
+      <h2 data-i18n="photos_title">Фотоархив</h2>
+    </div>
+    <div class="photo-grid reveal" id="photoGrid"></div>
+  </div>
+</section>
+
 <!-- AWARDS -->
 <section class="section" id="awards" style="background:var(--bg-2)">
   <div class="wrap">
@@ -609,7 +632,16 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:70px 0 40px
   </div>
 </div>
 
+<!-- PHOTO LIGHTBOX -->
+<div class="photo-lb" id="photoLb" aria-hidden="true">
+  <button class="lb-close" id="plbClose" aria-label="Закрыть">×</button>
+  <button class="lb-nav lb-prev" id="plbPrev" aria-label="Предыдущее">‹</button>
+  <button class="lb-nav lb-next" id="plbNext" aria-label="Следующее">›</button>
+  <div class="plb-stage"><img id="plbImg" src="" alt="Фотоархив — Агимсалы Дузельханов" draggable="false"></div>
+</div>
+
 <script src="works-data.js"></script>
+<script src="photos-data.js"></script>
 <script>
 /* ── WORKS DATA: WORKS загружается из works-data.js ── */
 /* ===== legacy inline catalog disabled =====
@@ -733,7 +765,7 @@ function renderGallery(){
 
 /* ── I18N ── */
 const I18N={
- ru:{brand_name:"Дузельханов",brand_sub:"Художник · 1951–2025",nav_works:"Работы",nav_tenge:"Художник тенге",nav_bio:"Биография",nav_essay:"Эссе",nav_awards:"Награды",nav_exh:"Выставки",nav_contact:"Контакты",
+ ru:{brand_name:"Дузельханов",brand_sub:"Художник · 1951–2025",nav_works:"Работы",nav_tenge:"Художник тенге",nav_bio:"Биография",nav_essay:"Эссе",nav_awards:"Награды",nav_exh:"Выставки",nav_contact:"Контакты",nav_photos:"Фотоархив",photos_eyebrow:"Архив",photos_title:"Фотоархив",
   es_eyebrow:"Жизнь и творчество",es_title:"Кисть, держащая память степи",es_cap:"Степные пейзажи. Из серии для Кызылорды",es_sign:"Очерк подготовлен для сайта памяти художника.",
   hero_eyebrow:"Живописец · График · Иллюстратор",hero_title:"Агимсалы<br><em>Дузельханов</em>",hero_lede:"Лауреат Государственной премии Республики Казахстан, заслуженный деятель искусств Республики Казахстан, один из авторов дизайна национальной валюты — тенге.",hero_cta1:"Смотреть работы",hero_cta2:"Жизнь и творчество",hero_frame:"Портрет художника<br>в мастерской",scroll:"Листайте",
   st_books:"оформленных книг",st_posters:"авторских плакатов",st_tenge:"дизайн тенге",st_years:"лет в искусстве",
@@ -750,7 +782,7 @@ const I18N={
   ct_eyebrow:"Связь",ct_title:"Связаться с семьёй художника",ct_text:"По вопросам выставок, публикаций и наследия — для музеев, галерей, кураторов и исследователей. Напишите, и мы ответим.",ct_name:"Имя",ct_email:"E-mail",ct_msg:"Сообщение",ct_send:"Отправить",ct_sent:"Отправлено",ct_err:"Ошибка — попробуйте ещё раз",
   foot_tag:"Живопись, графика и иллюстрация, посвящённые истории и культуре Казахстана.",foot_explore:"Разделы",foot_more:"Ещё",foot_contact:"Контакты",foot_made:"Все права защищены. Изображения работ — собственность семьи художника."},
 
- kz:{brand_name:"Дүзелханов",brand_sub:"Суретші · 1951–2025",nav_works:"Жұмыстар",nav_tenge:"Теңге суретшісі",nav_bio:"Өмірбаян",nav_essay:"Эссе",nav_awards:"Марапаттар",nav_exh:"Көрмелер",nav_contact:"Байланыс",
+ kz:{brand_name:"Дүзелханов",brand_sub:"Суретші · 1951–2025",nav_works:"Жұмыстар",nav_tenge:"Теңге суретшісі",nav_bio:"Өмірбаян",nav_essay:"Эссе",nav_awards:"Марапаттар",nav_exh:"Көрмелер",nav_contact:"Байланыс",nav_photos:"Фотомұрағат",photos_eyebrow:"Мұрағат",photos_title:"Фотомұрағат",
   es_eyebrow:"Өмірі мен шығармашылығы",es_title:"Дала жадын ұстаған қылқалам",es_cap:"Дала пейзаждары. Қызылордаға арналған топтамадан",es_sign:"Очерк суретші туралы сайт үшін дайындалды.",
   hero_eyebrow:"Кескіндемеші · График · Иллюстратор",hero_title:"Ағымсалы<br><em>Дүзелханов</em>",hero_lede:"Қазақстан Республикасы Мемлекеттік сыйлығының лауреаты, Қазақстанның еңбек сіңірген өнер қайраткері, ұлттық валюта — теңге дизайнының авторларының бірі.",hero_cta1:"Жұмыстарды көру",hero_cta2:"Өмірі мен шығармашылығы",hero_frame:"Шеберханадағы<br>суретші бейнесі",scroll:"Төмен қарай",
   st_books:"безендірілген кітап",st_posters:"авторлық плакат",st_tenge:"теңге дизайны",st_years:"жыл өнерде",
@@ -767,7 +799,7 @@ const I18N={
   ct_eyebrow:"Байланыс",ct_title:"Суретшінің отбасымен байланысу",ct_text:"Көрмелер, басылымдар және мұра мәселелері бойынша — мұражайлар, галереялар мен зерттеушілерге. Жазыңыз, жауап береміз.",ct_name:"Аты",ct_email:"E-mail",ct_msg:"Хабарлама",ct_send:"Жіберу",ct_sent:"Жіберілді",ct_err:"Қате — қайталап көріңіз",
   foot_tag:"Қазақстан тарихы мен мәдениетіне арналған кескіндеме, график және иллюстрация.",foot_explore:"Бөлімдер",foot_more:"Тағы",foot_contact:"Байланыс",foot_made:"Барлық құқық қорғалған. Туындылардың суреттері — суретші отбасының меншігі."},
 
- en:{brand_name:"Duzelkhanov",brand_sub:"Artist · 1951–2025",nav_works:"Works",nav_tenge:"Artist of the Tenge",nav_bio:"Biography",nav_essay:"Essay",nav_awards:"Awards",nav_exh:"Exhibitions",nav_contact:"Contact",
+ en:{brand_name:"Duzelkhanov",brand_sub:"Artist · 1951–2025",nav_works:"Works",nav_tenge:"Artist of the Tenge",nav_bio:"Biography",nav_essay:"Essay",nav_awards:"Awards",nav_exh:"Exhibitions",nav_contact:"Contact",nav_photos:"Photo archive",photos_eyebrow:"Archive",photos_title:"Photo archive",
   es_eyebrow:"Life and art",es_title:"A Brush That Holds the Memory of the Steppe",es_cap:"Steppe Landscapes. From the Kyzylorda series",es_sign:"An essay prepared for the artist's memorial site.",
   hero_eyebrow:"Painter · Graphic artist · Illustrator",hero_title:"Agimsaly<br><em>Duzelkhanov</em>",hero_lede:"Laureate of the State Prize of the Republic of Kazakhstan, Honoured Artist of the Republic of Kazakhstan and one of the designers of the national currency — the tenge.",hero_cta1:"View works",hero_cta2:"Life and art",hero_frame:"Portrait of the artist<br>in his studio",scroll:"Scroll",
   st_books:"books designed",st_posters:"original posters",st_tenge:"tenge design",st_years:"years in art",
@@ -1021,6 +1053,29 @@ if(contactForm){
       setTimeout(()=>{btn.textContent=original;},4000);
     }
   });
+}
+
+/* ── ФОТОАРХИВ (сетка + просмотр по клику) ── */
+const photoGrid=document.getElementById('photoGrid');
+if(photoGrid && typeof PHOTOS!=='undefined' && PHOTOS.length){
+  PHOTOS.forEach((p,i)=>{
+    const el=document.createElement('div');
+    el.className='photo-item'; el.dataset.idx=i;
+    el.innerHTML='<img src="'+p.img.replace('assets/photos/','assets/photos/thumb/')+'" alt="Агимсалы Дузельханов — фотоархив" loading="lazy" draggable="false" style="aspect-ratio:'+(p.ar||1)+'">';
+    photoGrid.appendChild(el);
+  });
+  const photoLb=document.getElementById('photoLb'), plbImg=document.getElementById('plbImg');
+  let plbIdx=0;
+  function plbShow(){plbImg.src=PHOTOS[plbIdx].img;}
+  function plbOpen(i){plbIdx=i;plbShow();photoLb.classList.add('on');document.documentElement.style.overflow='hidden';}
+  function plbClose(){photoLb.classList.remove('on');document.documentElement.style.overflow='';}
+  function plbNav(d){plbIdx=(plbIdx+d+PHOTOS.length)%PHOTOS.length;plbShow();}
+  photoGrid.addEventListener('click',e=>{const it=e.target.closest('.photo-item');if(it)plbOpen(+it.dataset.idx);});
+  document.getElementById('plbClose').addEventListener('click',plbClose);
+  document.getElementById('plbPrev').addEventListener('click',e=>{e.stopPropagation();plbNav(-1);});
+  document.getElementById('plbNext').addEventListener('click',e=>{e.stopPropagation();plbNav(1);});
+  photoLb.addEventListener('click',e=>{if(e.target===photoLb)plbClose();});
+  addEventListener('keydown',e=>{if(!photoLb.classList.contains('on'))return;if(e.key==='Escape')plbClose();else if(e.key==='ArrowRight')plbNav(1);else if(e.key==='ArrowLeft')plbNav(-1);});
 }
 applyLang();
 </script>
