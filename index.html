@@ -187,6 +187,7 @@ a{color:inherit;text-decoration:none}
 /* ── ВИДЕО ПАМЯТИ ── */
 .video-frame{position:relative;width:100%;max-width:900px;margin:46px auto 0;aspect-ratio:16/9;background:#000;border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
 .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.video-cap{text-align:center;max-width:680px;margin:28px auto 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.5;color:var(--muted)}
 .photo-lb{position:fixed;inset:0;z-index:200;background:rgba(8,7,5,.96);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
 .photo-lb.on{opacity:1;visibility:visible}
 .plb-stage{display:flex;align-items:center;justify-content:center;max-width:92vw;max-height:88vh}
@@ -578,6 +579,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:70px 0 40px
     <div class="video-frame reveal">
       <iframe src="https://www.youtube-nocookie.com/embed/lkLGs_OA6iA?rel=0" title="Памяти Агимсалы Дузельханова" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
     </div>
+    <p class="video-cap reveal" data-i18n="video_cap">Посвящается светлой памяти Агимсалы Дузельхановича — с любовью и благодарностью от семьи.</p>
   </div>
 </section>
 
@@ -814,7 +816,7 @@ function renderGallery(){
 
 /* ── I18N ── */
 const I18N={
- ru:{brand_name:"Дузельханов",brand_sub:"Художник · 1951–2025",nav_works:"Работы",nav_tenge:"Художник тенге",nav_bio:"Биография",nav_essay:"Эссе",nav_awards:"Награды",nav_exh:"Выставки",nav_contact:"Контакты",nav_photos:"Фотоархив",nav_video:"Видео",video_eyebrow:"Памяти",video_title:"Видео памяти",photos_eyebrow:"Архив",photos_title:"Фотоархив",photos_reveal:"Открыть фотоархив",photos_count:"фото",photos_collapse:"Скрыть",
+ ru:{brand_name:"Дузельханов",brand_sub:"Художник · 1951–2025",nav_works:"Работы",nav_tenge:"Художник тенге",nav_bio:"Биография",nav_essay:"Эссе",nav_awards:"Награды",nav_exh:"Выставки",nav_contact:"Контакты",nav_photos:"Фотоархив",nav_video:"Видео",video_eyebrow:"Памяти",video_title:"Видео памяти",video_cap:"Посвящается светлой памяти Агимсалы Дузельхановича — с любовью и благодарностью от семьи.",photos_eyebrow:"Архив",photos_title:"Фотоархив",photos_reveal:"Открыть фотоархив",photos_count:"фото",photos_collapse:"Скрыть",
   es_eyebrow:"Жизнь и творчество",es_title:"Кисть, держащая память степи",es_cap:"Степные пейзажи. Из серии для Кызылорды",es_sign:"Очерк подготовлен для сайта памяти художника.",
   hero_eyebrow:"Живописец · График · Иллюстратор",hero_title:"Агимсалы<br><em>Дузельханов</em>",hero_lede:"Лауреат Государственной премии Республики Казахстан, заслуженный деятель искусств Республики Казахстан, один из авторов дизайна национальной валюты — тенге.",hero_cta1:"Смотреть работы",hero_cta2:"Жизнь и творчество",hero_frame:"Портрет художника<br>в мастерской",scroll:"Листайте",
   st_books:"оформленных книг",st_posters:"авторских плакатов",st_tenge:"дизайн тенге",st_years:"лет в искусстве",
@@ -831,7 +833,7 @@ const I18N={
   ct_eyebrow:"Связь",ct_title:"Связаться с семьёй художника",ct_text:"По вопросам выставок, публикаций и наследия — для музеев, галерей, кураторов и исследователей. Напишите, и мы ответим.",ct_name:"Имя",ct_email:"E-mail",ct_msg:"Сообщение",ct_send:"Отправить",ct_sent:"Отправлено",ct_err:"Ошибка — попробуйте ещё раз",
   foot_tag:"Живопись, графика и иллюстрация, посвящённые истории и культуре Казахстана.",foot_explore:"Разделы",foot_more:"Ещё",foot_contact:"Контакты",foot_made:"Все права защищены. Изображения работ — собственность семьи художника."},
 
- kz:{brand_name:"Дүзелханов",brand_sub:"Суретші · 1951–2025",nav_works:"Жұмыстар",nav_tenge:"Теңге суретшісі",nav_bio:"Өмірбаян",nav_essay:"Эссе",nav_awards:"Марапаттар",nav_exh:"Көрмелер",nav_contact:"Байланыс",nav_photos:"Фотомұрағат",nav_video:"Бейне",video_eyebrow:"Еске алу",video_title:"Еске алу бейнесі",photos_eyebrow:"Мұрағат",photos_title:"Фотомұрағат",photos_reveal:"Фотомұрағатты ашу",photos_count:"сурет",photos_collapse:"Жасыру",
+ kz:{brand_name:"Дүзелханов",brand_sub:"Суретші · 1951–2025",nav_works:"Жұмыстар",nav_tenge:"Теңге суретшісі",nav_bio:"Өмірбаян",nav_essay:"Эссе",nav_awards:"Марапаттар",nav_exh:"Көрмелер",nav_contact:"Байланыс",nav_photos:"Фотомұрағат",nav_video:"Бейне",video_eyebrow:"Еске алу",video_title:"Еске алу бейнесі",video_cap:"Ағымсалы Дүзелханұлының жарқын естелігіне — отбасынан сүйіспеншілікпен.",photos_eyebrow:"Мұрағат",photos_title:"Фотомұрағат",photos_reveal:"Фотомұрағатты ашу",photos_count:"сурет",photos_collapse:"Жасыру",
   es_eyebrow:"Өмірі мен шығармашылығы",es_title:"Дала жадын ұстаған қылқалам",es_cap:"Дала пейзаждары. Қызылордаға арналған топтамадан",es_sign:"Очерк суретші туралы сайт үшін дайындалды.",
   hero_eyebrow:"Кескіндемеші · График · Иллюстратор",hero_title:"Ағымсалы<br><em>Дүзелханов</em>",hero_lede:"Қазақстан Республикасы Мемлекеттік сыйлығының лауреаты, Қазақстанның еңбек сіңірген өнер қайраткері, ұлттық валюта — теңге дизайнының авторларының бірі.",hero_cta1:"Жұмыстарды көру",hero_cta2:"Өмірі мен шығармашылығы",hero_frame:"Шеберханадағы<br>суретші бейнесі",scroll:"Төмен қарай",
   st_books:"безендірілген кітап",st_posters:"авторлық плакат",st_tenge:"теңге дизайны",st_years:"жыл өнерде",
@@ -848,7 +850,7 @@ const I18N={
   ct_eyebrow:"Байланыс",ct_title:"Суретшінің отбасымен байланысу",ct_text:"Көрмелер, басылымдар және мұра мәселелері бойынша — мұражайлар, галереялар мен зерттеушілерге. Жазыңыз, жауап береміз.",ct_name:"Аты",ct_email:"E-mail",ct_msg:"Хабарлама",ct_send:"Жіберу",ct_sent:"Жіберілді",ct_err:"Қате — қайталап көріңіз",
   foot_tag:"Қазақстан тарихы мен мәдениетіне арналған кескіндеме, график және иллюстрация.",foot_explore:"Бөлімдер",foot_more:"Тағы",foot_contact:"Байланыс",foot_made:"Барлық құқық қорғалған. Туындылардың суреттері — суретші отбасының меншігі."},
 
- en:{brand_name:"Duzelkhanov",brand_sub:"Artist · 1951–2025",nav_works:"Works",nav_tenge:"Artist of the Tenge",nav_bio:"Biography",nav_essay:"Essay",nav_awards:"Awards",nav_exh:"Exhibitions",nav_contact:"Contact",nav_photos:"Photo archive",nav_video:"Video",video_eyebrow:"In memoriam",video_title:"In Loving Memory",photos_eyebrow:"Archive",photos_title:"Photo archive",photos_reveal:"Open the archive",photos_count:"photos",photos_collapse:"Hide",
+ en:{brand_name:"Duzelkhanov",brand_sub:"Artist · 1951–2025",nav_works:"Works",nav_tenge:"Artist of the Tenge",nav_bio:"Biography",nav_essay:"Essay",nav_awards:"Awards",nav_exh:"Exhibitions",nav_contact:"Contact",nav_photos:"Photo archive",nav_video:"Video",video_eyebrow:"In memoriam",video_title:"In Loving Memory",video_cap:"In loving memory of Agimsaly Duzelkhanov — with love and gratitude from his family.",photos_eyebrow:"Archive",photos_title:"Photo archive",photos_reveal:"Open the archive",photos_count:"photos",photos_collapse:"Hide",
   es_eyebrow:"Life and art",es_title:"A Brush That Holds the Memory of the Steppe",es_cap:"Steppe Landscapes. From the Kyzylorda series",es_sign:"An essay prepared for the artist's memorial site.",
   hero_eyebrow:"Painter · Graphic artist · Illustrator",hero_title:"Agimsaly<br><em>Duzelkhanov</em>",hero_lede:"Laureate of the State Prize of the Republic of Kazakhstan, Honoured Artist of the Republic of Kazakhstan and one of the designers of the national currency — the tenge.",hero_cta1:"View works",hero_cta2:"Life and art",hero_frame:"Portrait of the artist<br>in his studio",scroll:"Scroll",
   st_books:"books designed",st_posters:"original posters",st_tenge:"tenge design",st_years:"years in art",
