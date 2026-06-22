@@ -132,9 +132,9 @@ a{color:inherit;text-decoration:none}
 .hero-bg::after{content:"";position:absolute;inset:0;background:
   linear-gradient(180deg,rgba(18,15,10,.1),rgba(18,15,10,0) 40%,rgba(18,15,10,.14) 70%,rgba(18,15,10,.66)),
   linear-gradient(76deg,rgba(18,15,10,.52),rgba(18,15,10,0) 46%)}
-.hero-inner{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:0 32px 104px;color:#fff}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:120px 32px 104px;color:#fff}
 .hero .eyebrow{color:#fff;font-weight:500;text-shadow:0 1px 14px rgba(0,0,0,.6)}
-.hero h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(56px,10vw,134px);line-height:.95;letter-spacing:-.005em;margin:18px 0 0;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.55),0 1px 3px rgba(0,0,0,.4)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(46px,min(9.5vw,12.5vh),130px);line-height:.95;letter-spacing:-.005em;margin:18px 0 0;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.55),0 1px 3px rgba(0,0,0,.4)}
 .hero h1 em{font-style:normal;color:#fff}
 .hero-dates{margin-top:26px;font-size:16.5px;letter-spacing:.24em;color:rgba(255,255,255,.9);text-shadow:0 1px 14px rgba(0,0,0,.6)}
 .hero .lede{font-size:clamp(16px,1.6vw,18px);line-height:1.7;color:rgba(255,255,255,.9);margin-top:24px;max-width:470px;text-shadow:0 1px 18px rgba(0,0,0,.55)}
@@ -147,6 +147,20 @@ a{color:inherit;text-decoration:none}
 .scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.6);display:flex;flex-direction:column;align-items:center;gap:12px}
 .scroll-cue span{width:1px;height:46px;background:linear-gradient(rgba(255,255,255,.7),transparent);animation:cue 2.4s var(--ease) infinite}
 @keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+/* НИЗКИЕ экраны (ноутбуки/альбомные телефоны): отступы плотнее, подсказка прокрутки скрыта — заголовок уже масштабируется через min(vw,vh) и не наезжает на меню */
+@media(max-height:800px){
+  .hero-inner{padding-top:104px;padding-bottom:58px}
+  .hero-dates{margin-top:16px}
+  .hero .lede{margin-top:16px}
+  .hero-cta{margin-top:26px}
+  .scroll-cue{display:none}
+}
+@media(max-height:560px){
+  .hero-inner{padding-top:88px;padding-bottom:38px}
+  .hero h1{margin-top:10px}
+  .hero .lede{display:none}
+  .hero-cta{margin-top:20px}
+}
 
 /* ── STATS ───────────────────────────── */
 .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -1007,12 +1021,33 @@ document.getElementById('lbClose').addEventListener('click',lbClose);
 document.getElementById('lbPrev').addEventListener('click',e=>{e.stopPropagation();lbNav(-1)});
 document.getElementById('lbNext').addEventListener('click',e=>{e.stopPropagation();lbNav(1)});
 lbEl.addEventListener('click',e=>{if(e.target===lbEl)lbClose()});
-lbStage.addEventListener('click',e=>{e.stopPropagation();if(LB.drag)return;LB.zoom=LB.zoom>1?1:2.6;LB.px=0;LB.py=0;lbApply()});
+lbStage.addEventListener('click',e=>{e.stopPropagation();if(LB.drag)return;if(matchMedia('(hover:none)').matches)return;LB.zoom=LB.zoom>1?1:2.6;LB.px=0;LB.py=0;lbApply()});
 lbStage.addEventListener('wheel',e=>{e.preventDefault();LB.zoom=Math.min(4,Math.max(1,LB.zoom+(e.deltaY<0?0.25:-0.25)));if(LB.zoom===1){LB.px=0;LB.py=0}lbApply()},{passive:false});
 lbStage.addEventListener('mousedown',e=>{if(LB.zoom<=1)return;LB.drag=true;LB.sx=e.clientX-LB.px;LB.sy=e.clientY-LB.py;lbStage.style.cursor='grabbing';e.preventDefault()});
 addEventListener('mousemove',e=>{if(!LB.drag)return;LB.px=e.clientX-LB.sx;LB.py=e.clientY-LB.sy;lbApply()});
 addEventListener('mouseup',()=>{if(LB.drag){LB.drag=false;setTimeout(()=>LB.drag=false,0);lbApply()}});
 addEventListener('keydown',e=>{if(!lbEl.classList.contains('on'))return;if(e.key==='Escape')lbClose();else if(e.key==='ArrowRight')lbNav(1);else if(e.key==='ArrowLeft')lbNav(-1)});
+/* ── мобильные жесты лайтбоксов: тап (по пустому или фото) = закрыть, горизонтальный свайп = листать ── */
+function addLbGestures(el,closeFn,navFn,getZoom){
+  let sx=0,sy=0,st=0,moved=false,multi=false;
+  el.addEventListener('touchstart',e=>{
+    if(e.touches.length>1){multi=true;return;}
+    multi=false;const t=e.touches[0];sx=t.clientX;sy=t.clientY;st=Date.now();moved=false;
+  },{passive:true});
+  el.addEventListener('touchmove',e=>{
+    if(multi)return;const t=e.touches[0];
+    if(Math.abs(t.clientX-sx)>10||Math.abs(t.clientY-sy)>10)moved=true;
+  },{passive:true});
+  el.addEventListener('touchend',e=>{
+    if(multi){multi=false;return;}
+    if(e.target.closest('.lb-nav,.lb-close'))return; // кнопки отрабатывают сами
+    if(getZoom&&getZoom()>1)return;                  // если приближено — не трогаем
+    const t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy,adx=Math.abs(dx),ady=Math.abs(dy);
+    if(adx>45&&adx>ady*1.4){e.preventDefault();navFn(dx<0?1:-1);}     // свайп влево=след., вправо=пред.
+    else if(!moved&&Date.now()-st<350){e.preventDefault();closeFn();} // тап = закрыть
+  },{passive:false});
+}
+addLbGestures(lbEl,lbClose,lbNav,()=>LB.zoom);
 
 /* ── ЗАЩИТА изображений (деттерент) ── */
 document.addEventListener('contextmenu',e=>{if(e.target.closest('img,.art,.lb-stage,.hero-frame'))e.preventDefault()});
@@ -1144,6 +1179,7 @@ if(photoGrid && typeof PHOTOS!=='undefined' && PHOTOS.length){
   document.getElementById('plbNext').addEventListener('click',e=>{e.stopPropagation();plbNav(1);});
   photoLb.addEventListener('click',e=>{if(e.target===photoLb)plbClose();});
   addEventListener('keydown',e=>{if(!photoLb.classList.contains('on'))return;if(e.key==='Escape')plbClose();else if(e.key==='ArrowRight')plbNav(1);else if(e.key==='ArrowLeft')plbNav(-1);});
+  addLbGestures(photoLb,plbClose,plbNav,null);
 }
 applyLang();
 </script>
